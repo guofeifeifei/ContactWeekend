@@ -28,8 +28,12 @@
     [self.activityImageView sd_setImageWithURL:[NSURL URLWithString:mainModel.image_big] placeholderImage:nil];//网上获取图片
     self.activityNameLable.text = mainModel.title;
     self.activityPriceLable.text = mainModel.price;
-    
-    
+    [self.activityDistanceBtn setTitle:mainModel.address forState:UIControlStateNormal];
+    if ([mainModel.type intValue] == RecommendTypeActivity) {
+        self.activityDistanceBtn.hidden = NO;
+    }else{
+        self.activityDistanceBtn.hidden = YES;
+    }
 }
 - (void)awakeFromNib {
     // Initialization code
