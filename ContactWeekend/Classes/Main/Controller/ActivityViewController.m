@@ -13,7 +13,7 @@
 @interface ActivityViewController ()
 
 @property (strong, nonatomic) IBOutlet ActivityDetailView *activityDetailView;
-
+@property (strong, nonatomic) NSString *phoneNum;
 @end
 
 @implementation ActivityViewController
@@ -23,11 +23,37 @@
     // Do any additional setup after loading the view.
     self.title = @"活动详情";
 
+    self.activityDetailView.mapButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self.activityDetailView.mapButton addTarget:self action:@selector(mapButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    self.activityDetailView.phoneButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self.activityDetailView.phoneButton addTarget:self action:@selector(phoneButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    
    [self showBackButton];
    [self getModel];
       //self.tabBarController.hidesBottomBarWhenPushed = YES;
     
 }
+
+- (void)mapButtonAction:(UIButton *)btn{
+    
+}
+- (void)phoneButtonAction:(UIButton *)btn{
+    //程序外打电话，打完电话后就不返回当前应用
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", _phoneNum]]];
+    
+    
+    //程序内打电话
+    UIWebView *cellPhoneWebView = [[UIWebView alloc] init];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", _phoneNum]]];
+    [cellPhoneWebView loadRequest:request];
+    [self.view addSubview:cellPhoneWebView];
+    
+    
+    
+}
+
 
 #pragma mark Custom Method
 - (void)getModel{
@@ -38,7 +64,7 @@
    // [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [sessionManger GET:[NSString stringWithFormat:@"%@&id=%@",kActivityDetail, self.activityId] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
       //   [MBProgressHUD hideHUDForView:self.view animated:YES];
-        NSLog(@"downloadProgress = %@", downloadProgress);
+      
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
        // [MBProgressHUD hideHUDForView:self.view animated:YES];
         
@@ -51,7 +77,8 @@
           
             self.activityDetailView.dataDic= successDic;
             
-            
+            self.phoneNum = successDic[@"tel"];
+         
         }else{
             
         }
@@ -63,6 +90,8 @@
     }];
     
 }
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

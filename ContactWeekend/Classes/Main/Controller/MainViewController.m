@@ -105,9 +105,7 @@
     return 26;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    
     UIView *view = [[UIView alloc] init];
-    
    UIImageView *sectionView = [[UIImageView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width / 2 - 160, 5, 320, 16)];
    
     if (section == 0) {
@@ -126,8 +124,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        ActivityViewController *activityVC = [[ActivityViewController alloc] init];
+        UIStoryboard *mainStroyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ActivityViewController *activityVC = [mainStroyBoard instantiateViewControllerWithIdentifier:@"ActivityDetilVC"];
+        
+        //活动id
+        MainModel *mainModel = self.listArray[indexPath.section][indexPath.row];
+        activityVC.activityId = mainModel.activityId;
+        
         [self.navigationController pushViewController:activityVC animated:YES];
+        
+        
+     
+        
     }else{
         ThemeViewController *themeVC = [[ThemeViewController alloc] init];
         [self.navigationController pushViewController:themeVC animated:YES];
@@ -345,8 +353,7 @@
                 NSDictionary *dict = @{@"url" : dic[@"url"], @"type" :dic[@"type"], @"id": dic[@"id"]};
                 [self.adArray addObject:dict];
             }
-            
-            
+
             [self configTableViewHeaderView];
             
         }else{
@@ -358,10 +365,7 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error = %@",error);
     }];
-    
-    
-    
-    
+
     [self startTimer];
     
   }
