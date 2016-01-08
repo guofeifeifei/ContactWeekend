@@ -19,7 +19,10 @@
 #import "ClassListViewController.h"
 #import "jingActivityViewController.h"
 #import "HotActivityViewController.h"
+
 @interface MainViewController ()<UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
+
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *listArray;//全部类表数据
 @property (nonatomic, strong) NSMutableArray *activityArray;//推荐活动数据
@@ -34,6 +37,10 @@
 @property(nonatomic, strong) UIButton *jingxuanbtn;
 
 @property(nonatomic, strong) UIButton *remenBtn;
+
+
+
+
 @end
 
 @implementation MainViewController
@@ -61,14 +68,12 @@
     //注册一下cell
     [self.tableView registerNib:[UINib nibWithNibName:@"MainTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
  
-   [self requestModel];
+   //[self requestModel];
    // [self configtableData];
      [self configTableViewHeaderView];
     
  }
-- (void)configtableData{
-    
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -123,12 +128,15 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+            MainModel *mainModel = self.listArray[indexPath.section][indexPath.row];
     if (indexPath.section == 0) {
         UIStoryboard *mainStroyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         ActivityViewController *activityVC = [mainStroyBoard instantiateViewControllerWithIdentifier:@"ActivityDetilVC"];
-        
+        activityVC.hidesBottomBarWhenPushed = YES;
+       
+
         //活动id
-        MainModel *mainModel = self.listArray[indexPath.section][indexPath.row];
+
         activityVC.activityId = mainModel.activityId;
         
         [self.navigationController pushViewController:activityVC animated:YES];
@@ -138,6 +146,10 @@
         
     }else{
         ThemeViewController *themeVC = [[ThemeViewController alloc] init];
+        //活动id
+       
+        themeVC.themeid = mainModel.activityId;
+        
         [self.navigationController pushViewController:themeVC animated:YES];
     }
     
@@ -262,15 +274,17 @@
     ActivityViewController *activityVC = [mainStroyBoard instantiateViewControllerWithIdentifier:@"ActivityDetilVC"];
         
     activityVC.activityId = self.adArray[adButton.tag - 100][@"id"];
+    
+        
     [self.navigationController pushViewController:activityVC animated:YES];
         
         
         
     }else{
         
-        HotActivityViewController *hotVC = [[HotActivityViewController alloc] init];
-        [self.navigationController pushViewController:hotVC animated:YES];
-        
+        ThemeViewController *themeVC = [[ThemeViewController alloc] init];
+        themeVC.themeid = self.adArray[adButton.tag- 100][@"id"];
+        [self.navigationController pushViewController:themeVC animated:YES];
     }
 }
 #pragma mark --------- 轮播图方法
@@ -381,6 +395,10 @@
 //每两秒执行一次方法，图片自动轮播
 - (void)rollAnimation{
     
+    //数组个数可能为0，当对0取余没有意义
+    if (self.adArray.count > 0) {
+        
+    
     //把当前页加一
      NSInteger rollPage =  (self.pageControl.currentPage + 1) % self.adArray.count;
     self.pageControl.currentPage = rollPage;
@@ -388,6 +406,7 @@
     //偏移量应滚蛋x柱坐标
     CGFloat offsetX = self.pageControl.currentPage * kWidth;
     [self.carouselView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+    }
 }
 
 //手动scrollView滑动时候，关闭定时器， 停止scrollView滑动时候，开启定时器
@@ -434,7 +453,10 @@
     }
     return _themeArray;
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+}
 /*
 #pragma mark - Navigation
 

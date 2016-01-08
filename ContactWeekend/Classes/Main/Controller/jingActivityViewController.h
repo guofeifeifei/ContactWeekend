@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @interface jingActivityViewController : UIViewController
-
+@property(nonatomic, copy) NSString *jingxuanId;
 @end

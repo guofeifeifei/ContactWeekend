@@ -23,7 +23,7 @@
     // Override point for customization after application launch.
     
     //UItabBar
-    UITabBarController *tabBarVC = [[UITabBarController alloc] init];
+   self.tabBarVC = [[UITabBarController alloc] init];
     //创建被tabarVC管理的视图控制器
    
     //主页
@@ -68,10 +68,10 @@
     
     
     
-    tabBarVC.tabBar.barTintColor = [UIColor whiteColor];
+    self.tabBarVC.tabBar.barTintColor = [UIColor whiteColor];
     //添加被管理的试图控制器
-    tabBarVC.viewControllers = @[mainNav, discoverNav, mineNav];
-    self.window.rootViewController = tabBarVC;
+    self.tabBarVC.viewControllers = @[mainNav, discoverNav, mineNav];
+    self.window.rootViewController = self.tabBarVC;
     
     
     

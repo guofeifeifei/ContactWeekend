@@ -13,7 +13,9 @@
 #pragma mark ------时间转化相关的方法
 + (NSString *)getDateFromString:(NSString *)timestamp;
 #pragma mark ------根据文字最大显示宽度和文字内容的返回文字高度
+//根据指定时间按戳返回字符串类型时间
 + (CGFloat)getTextHeightWithBigest:(NSString *)text bigerSize:(CGSize)bigSize textFont:(CGFloat)font;
-
+//获取系统当前时间
++ (NSDate *)getSystemNowDate;
 
 @end

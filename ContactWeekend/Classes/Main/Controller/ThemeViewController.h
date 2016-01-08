@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ThemeViewController : UIViewController
-
+@property(nonatomic, retain) NSString *themeid;
 @end

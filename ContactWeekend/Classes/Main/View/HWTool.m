@@ -26,5 +26,15 @@
     
 }
 
++ (NSDate *)getSystemNowDate{
+    //刷新完成时间
+         //创建一个NSDataFormatter显示刷新时间
+        NSDateFormatter *df = [[NSDateFormatter alloc] init ];
+        df.dateFormat = @"yyyy-MM-dd HH:mm";
+        NSString *dateStr = [df stringFromDate:[NSDate date]];
+        NSDate *date = [df dateFromString:dateStr];
+        return date;
+   
+}
 
 @end

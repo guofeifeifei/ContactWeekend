@@ -2,6 +2,7 @@
 //  ActivityViewController.m
 //  ContactWeekend
 //
+//活动详情
 //  Created by scjy on 16/1/6.
 //  Copyright © 2016年 郭飞飞. All rights reserved.
 //
@@ -22,6 +23,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"活动详情";
+    //隐藏Tabbar
+    self.tabBarController.tabBar.hidden = YES;
+    
+        
 
     self.activityDetailView.mapButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.activityDetailView.mapButton addTarget:self action:@selector(mapButtonAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -86,7 +91,7 @@
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
       //  [MBProgressHUD hideHUDForView:self.view animated:YES];
-        NSLog(@"error = %@", error);
+        
     }];
     
 }
