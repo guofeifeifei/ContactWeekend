@@ -11,10 +11,9 @@
 		7A076FC21C3A1C5500D10A90 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A076FC11C3A1C5500D10A90 /* AppDelegate.m */; };
 		7A076FC41C3A1C5500D10A90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A076FC31C3A1C5500D10A90 /* Assets.xcassets */; };
 		7A076FC71C3A1C5500D10A90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A076FC51C3A1C5500D10A90 /* LaunchScreen.storyboard */; };
+		7A3A808D1C3F3AE0004F6BA9 /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3A808C1C3F3AE0004F6BA9 /* MainModel.m */; };
 		7A77E33D1C3D1BBB000C9CCA /* Fileactivity\ in Resources */ = {isa = PBXBuildFile; fileRef = 7A77E33C1C3D1BBB000C9CCA /* Fileactivity\ */; };
 		7A77E3401C3D2024000C9CCA /* UIViewController+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A77E33F1C3D2024000C9CCA /* UIViewController+Common.m */; };
-		7A8C12C41C3B9DBE0038ED93 /* File in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C12C31C3B9DBE0038ED93 /* File */; };
-		7A8C12C71C3BA08A0038ED93 /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C12C61C3BA08A0038ED93 /* MainModel.m */; };
 		7A9683581C3A4E3E00C191D8 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9683491C3A4E3E00C191D8 /* DiscoverViewController.m */; };
 		7A9683591C3A4E3E00C191D8 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A96834F1C3A4E3E00C191D8 /* MainViewController.m */; };
 		7A96835A1C3A4E3E00C191D8 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9683551C3A4E3E00C191D8 /* MineViewController.m */; };
@@ -46,12 +45,11 @@
 		7A076FC31C3A1C5500D10A90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A076FC61C3A1C5500D10A90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A076FC81C3A1C5500D10A90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A3A808B1C3F3AE0004F6BA9 /* MainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
+		7A3A808C1C3F3AE0004F6BA9 /* MainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainModel.m; sourceTree = "<group>"; };
 		7A77E33C1C3D1BBB000C9CCA /* Fileactivity\ */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Fileactivity\\"; sourceTree = "<group>"; };
 		7A77E33E1C3D2024000C9CCA /* UIViewController+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Common.h"; path = "../Classes/Main/Controller/UIViewController+Common.h"; sourceTree = "<group>"; };
 		7A77E33F1C3D2024000C9CCA /* UIViewController+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Common.m"; path = "../Classes/Main/Controller/UIViewController+Common.m"; sourceTree = "<group>"; };
-		7A8C12C31C3B9DBE0038ED93 /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = File; path = ../Controller/File; sourceTree = "<group>"; };
-		7A8C12C51C3BA08A0038ED93 /* MainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainModel.h; path = ../Controller/MainModel.h; sourceTree = "<group>"; };
-		7A8C12C61C3BA08A0038ED93 /* MainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainModel.m; path = ../Controller/MainModel.m; sourceTree = "<group>"; };
 		7A9683481C3A4E3E00C191D8 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
 		7A9683491C3A4E3E00C191D8 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
 		7A96834E1C3A4E3E00C191D8 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -160,6 +158,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7A3A808A1C3F3AE0004F6BA9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7A3A808B1C3F3AE0004F6BA9 /* MainModel.h */,
+				7A3A808C1C3F3AE0004F6BA9 /* MainModel.m */,
+			);
+			name = Models;
+			path = ../Models;
+			sourceTree = "<group>";
+		};
 		7A9683451C3A4E3E00C191D8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,7 +216,6 @@
 			isa = PBXGroup;
 			children = (
 				7A96834D1C3A4E3E00C191D8 /* Controller */,
-				7A9683501C3A4E3E00C191D8 /* Models */,
 				7A9683511C3A4E3E00C191D8 /* View */,
 			);
 			path = Main;
@@ -238,16 +245,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		7A9683501C3A4E3E00C191D8 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				7A8C12C31C3B9DBE0038ED93 /* File */,
-				7A8C12C51C3BA08A0038ED93 /* MainModel.h */,
-				7A8C12C61C3BA08A0038ED93 /* MainModel.m */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		7A9683511C3A4E3E00C191D8 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +256,7 @@
 				7A9683DB1C3A766D00C191D8 /* MainTableViewCell.h */,
 				7A9683DC1C3A766D00C191D8 /* MainTableViewCell.m */,
 				7A9683DD1C3A766D00C191D8 /* MainTableViewCell.xib */,
+				7A3A808A1C3F3AE0004F6BA9 /* Models */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -380,7 +378,6 @@
 			files = (
 				7A9683DF1C3A766D00C191D8 /* MainTableViewCell.xib in Resources */,
 				7A96835D1C3A507200C191D8 /* Main.storyboard in Resources */,
-				7A8C12C41C3B9DBE0038ED93 /* File in Resources */,
 				7A96835F1C3A508F00C191D8 /* Discover.storyboard in Resources */,
 				7A9683611C3A50C400C191D8 /* Mine.storyboard in Resources */,
 				7A076FC41C3A1C5500D10A90 /* Assets.xcassets in Resources */,
@@ -458,7 +455,7 @@
 				7AC4C30B1C3E4C5000ED3E1E /* HWTool.m in Sources */,
 				7AF54FBA1C3E10EA00006EE3 /* ActivityDetailView.m in Sources */,
 				7ACDBFD31C3CC0E4007B7CB8 /* jingActivityViewController.m in Sources */,
-				7A8C12C71C3BA08A0038ED93 /* MainModel.m in Sources */,
+				7A3A808D1C3F3AE0004F6BA9 /* MainModel.m in Sources */,
 				7ACDBFC41C3CBDC8007B7CB8 /* searchViewController.m in Sources */,
 				7A77E3401C3D2024000C9CCA /* UIViewController+Common.m in Sources */,
 				7ACDBFC71C3CBE8B007B7CB8 /* ActivityViewController.m in Sources */,
