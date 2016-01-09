@@ -12,7 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 @property (weak, nonatomic) IBOutlet UILabel *avtivityTitle;
-@property (weak, nonatomic) IBOutlet UIImageView *BigageImage;
+
 
 
 @property (weak, nonatomic) IBOutlet UILabel *activityPricesLabel;
@@ -38,14 +38,14 @@
 }
 #pragma mark----Model
 - (void)setJingModel:(jingModel *)jingModel{
-    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:self.jingModel.image] placeholderImage:nil];
+  [self.headImageView sd_setImageWithURL:[NSURL URLWithString:jingModel.image] placeholderImage:nil];
     self.avtivityTitle.text = jingModel.title;
     self.ageLable.text = jingModel.age;
     self.activityPricesLabel.text = jingModel.price;
-    self.activityDistenceLable.text = jingModel.address;
-  [self.loveButton setTitle:jingModel.counts forState:UIControlStateNormal];
-    
-    
+   self.activityDistenceLable.text = jingModel.address;
+ [self.loveButton setTitle:[NSString stringWithFormat:@"%@", jingModel.counts]forState:UIControlStateNormal];
+   
+  
     
     
 }

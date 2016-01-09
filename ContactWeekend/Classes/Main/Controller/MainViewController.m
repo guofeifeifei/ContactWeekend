@@ -68,7 +68,7 @@
     //注册一下cell
     [self.tableView registerNib:[UINib nibWithNibName:@"MainTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
  
-   //[self requestModel];
+ //  [self requestModel];
    // [self configtableData];
      [self configTableViewHeaderView];
     
@@ -336,7 +336,7 @@
     AFHTTPSessionManager *sessionManger = [AFHTTPSessionManager manager];
     sessionManger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
     [sessionManger GET:kMainDataList parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        NSLog(@"downloadProgress = %lld",downloadProgress.totalUnitCount);
+        GFFLog(@"downloadProgress = %lld",downloadProgress.totalUnitCount);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *resultdic = responseObject;
         NSString *status = resultdic[@"status"];
@@ -377,7 +377,8 @@
         
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+        GFFLog(@"%@", error);
+
     }];
 
     [self startTimer];

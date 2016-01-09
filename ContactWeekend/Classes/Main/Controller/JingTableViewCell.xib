@@ -15,25 +15,25 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Vi-Dr-bZQ">
-                        <rect key="frame" x="25" y="8" width="75" height="75"/>
+                        <rect key="frame" x="18" y="6" width="75" height="75"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmj-Yl-ggd">
-                        <rect key="frame" x="115" y="8" width="34" height="21"/>
+                        <rect key="frame" x="115" y="8" width="160" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="￥150" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hy1-62-MyM">
-                        <rect key="frame" x="115" y="62" width="45" height="21"/>
+                        <rect key="frame" x="115" y="62" width="85" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="989450.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkc-YD-frx">
-                        <rect key="frame" x="283" y="8" width="76" height="21"/>
+                        <rect key="frame" x="291" y="8" width="76" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -48,23 +48,22 @@
                         </state>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6n-HT-AJ1">
-                        <rect key="frame" x="189" y="39" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <rect key="frame" x="122" y="35" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="BigageImage" destination="M4K-xT-0IC" id="c0B-w6-E2X"/>
                 <outlet property="activityDistenceLable" destination="vkc-YD-frx" id="y48-zv-p0s"/>
                 <outlet property="activityPricesLabel" destination="Hy1-62-MyM" id="CdX-i9-cNP"/>
                 <outlet property="ageLable" destination="e6n-HT-AJ1" id="1NI-UT-a1o"/>
                 <outlet property="avtivityTitle" destination="pmj-Yl-ggd" id="FCv-T7-CcD"/>
-                <outlet property="headImageView" destination="2Vi-Dr-bZQ" id="GDo-I5-crD"/>
+                <outlet property="headImageView" destination="2Vi-Dr-bZQ" id="ROb-il-NEi"/>
                 <outlet property="loveButton" destination="jLH-wR-vev" id="7cd-k4-wnj"/>
             </connections>
-            <point key="canvasLocation" x="568.5" y="465"/>
+            <point key="canvasLocation" x="662.5" y="470"/>
         </tableViewCell>
     </objects>
     <resources>

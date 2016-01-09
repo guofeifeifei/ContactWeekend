@@ -20,7 +20,6 @@
 		7A5402381C3FA3AA00F232F6 /* JingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5402361C3FA3AA00F232F6 /* JingTableViewCell.m */; };
 		7A5402391C3FA3AA00F232F6 /* JingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A5402371C3FA3AA00F232F6 /* JingTableViewCell.xib */; };
 		7A54023C1C3FBE7300F232F6 /* jingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A54023B1C3FBE7300F232F6 /* jingModel.m */; };
-		7A54023F1C3FC33E00F232F6 /* jingxuan.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A54023E1C3FC33E00F232F6 /* jingxuan.plist */; };
 		7A77E33D1C3D1BBB000C9CCA /* Fileactivity\ in Resources */ = {isa = PBXBuildFile; fileRef = 7A77E33C1C3D1BBB000C9CCA /* Fileactivity\ */; };
 		7A77E3401C3D2024000C9CCA /* UIViewController+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A77E33F1C3D2024000C9CCA /* UIViewController+Common.m */; };
 		7A9683581C3A4E3E00C191D8 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9683491C3A4E3E00C191D8 /* DiscoverViewController.m */; };
@@ -33,6 +32,11 @@
 		7A9683DF1C3A766D00C191D8 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9683DD1C3A766D00C191D8 /* MainTableViewCell.xib */; };
 		7AC4C30B1C3E4C5000ED3E1E /* HWTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC4C30A1C3E4C5000ED3E1E /* HWTool.m */; };
 		7AC4C30E1C3E5B0800ED3E1E /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC4C30D1C3E5B0800ED3E1E /* UIView+Extension.m */; };
+		7ACC8CBA1C41218B00EEE30A /* jingxuan 19-07-11-054.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ACC8CB91C41218B00EEE30A /* jingxuan 19-07-11-054.plist */; };
+		7ACC8CBC1C41268F00EEE30A /* hott.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ACC8CBB1C41268F00EEE30A /* hott.plist */; };
+		7ACC8CC31C41287A00EEE30A /* HotTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACC8CC11C41287A00EEE30A /* HotTableViewCell.m */; };
+		7ACC8CC41C41287A00EEE30A /* HotTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ACC8CC21C41287A00EEE30A /* HotTableViewCell.xib */; };
+		7ACC8CC71C4131A100EEE30A /* hotModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACC8CC61C4131A100EEE30A /* hotModel.m */; };
 		7ACDBFC11C3CBC47007B7CB8 /* SelectCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACDBFC01C3CBC47007B7CB8 /* SelectCityViewController.m */; };
 		7ACDBFC41C3CBDC8007B7CB8 /* searchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACDBFC31C3CBDC8007B7CB8 /* searchViewController.m */; };
 		7ACDBFC71C3CBE8B007B7CB8 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACDBFC61C3CBE8B007B7CB8 /* ActivityViewController.m */; };
@@ -69,7 +73,6 @@
 		7A54023A1C3FBE7300F232F6 /* jingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jingModel.h; sourceTree = "<group>"; };
 		7A54023B1C3FBE7300F232F6 /* jingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jingModel.m; sourceTree = "<group>"; };
 		7A54023D1C3FBFA100F232F6 /* jingActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jingActivityViewController.h; sourceTree = "<group>"; };
-		7A54023E1C3FC33E00F232F6 /* jingxuan.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = jingxuan.plist; sourceTree = "<group>"; };
 		7A77E33C1C3D1BBB000C9CCA /* Fileactivity\ */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Fileactivity\\"; sourceTree = "<group>"; };
 		7A77E33E1C3D2024000C9CCA /* UIViewController+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Common.h"; path = "../Classes/Main/Controller/UIViewController+Common.h"; sourceTree = "<group>"; };
 		7A77E33F1C3D2024000C9CCA /* UIViewController+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Common.m"; path = "../Classes/Main/Controller/UIViewController+Common.m"; sourceTree = "<group>"; };
@@ -89,6 +92,13 @@
 		7AC4C30A1C3E4C5000ED3E1E /* HWTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HWTool.m; path = ../Classes/Main/View/HWTool.m; sourceTree = "<group>"; };
 		7AC4C30C1C3E5B0800ED3E1E /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Extension.h"; path = "../Classes/Main/View/UIView+Extension.h"; sourceTree = "<group>"; };
 		7AC4C30D1C3E5B0800ED3E1E /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Extension.m"; path = "../Classes/Main/View/UIView+Extension.m"; sourceTree = "<group>"; };
+		7ACC8CB91C41218B00EEE30A /* jingxuan 19-07-11-054.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "jingxuan 19-07-11-054.plist"; sourceTree = "<group>"; };
+		7ACC8CBB1C41268F00EEE30A /* hott.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hott.plist; sourceTree = "<group>"; };
+		7ACC8CC01C41287A00EEE30A /* HotTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotTableViewCell.h; sourceTree = "<group>"; };
+		7ACC8CC11C41287A00EEE30A /* HotTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotTableViewCell.m; sourceTree = "<group>"; };
+		7ACC8CC21C41287A00EEE30A /* HotTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotTableViewCell.xib; sourceTree = "<group>"; };
+		7ACC8CC51C4131A100EEE30A /* hotModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hotModel.h; sourceTree = "<group>"; };
+		7ACC8CC61C4131A100EEE30A /* hotModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hotModel.m; sourceTree = "<group>"; };
 		7ACDBFBB1C3CB162007B7CB8 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		7ACDBFBE1C3CB34E007B7CB8 /* Contactdefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contactdefine.h; sourceTree = "<group>"; };
 		7ACDBFBF1C3CBC47007B7CB8 /* SelectCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCityViewController.h; sourceTree = "<group>"; };
@@ -185,8 +195,11 @@
 			children = (
 				7A3A808B1C3F3AE0004F6BA9 /* MainModel.h */,
 				7A3A808C1C3F3AE0004F6BA9 /* MainModel.m */,
+				7ACC8CC51C4131A100EEE30A /* hotModel.h */,
+				7ACC8CC61C4131A100EEE30A /* hotModel.m */,
 				7A54023A1C3FBE7300F232F6 /* jingModel.h */,
 				7A54023B1C3FBE7300F232F6 /* jingModel.m */,
+				7ACC8CB91C41218B00EEE30A /* jingxuan 19-07-11-054.plist */,
 			);
 			name = Models;
 			path = ../Models;
@@ -277,6 +290,7 @@
 				7ACDBFD21C3CC0E4007B7CB8 /* jingActivityViewController.m */,
 				7ACDBFD41C3CC287007B7CB8 /* HotActivityViewController.h */,
 				7ACDBFD51C3CC287007B7CB8 /* HotActivityViewController.m */,
+				7ACC8CBB1C41268F00EEE30A /* hott.plist */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -295,8 +309,10 @@
 				7A9683DB1C3A766D00C191D8 /* MainTableViewCell.h */,
 				7A9683DC1C3A766D00C191D8 /* MainTableViewCell.m */,
 				7A9683DD1C3A766D00C191D8 /* MainTableViewCell.xib */,
+				7ACC8CC01C41287A00EEE30A /* HotTableViewCell.h */,
+				7ACC8CC11C41287A00EEE30A /* HotTableViewCell.m */,
+				7ACC8CC21C41287A00EEE30A /* HotTableViewCell.xib */,
 				7A3A808A1C3F3AE0004F6BA9 /* Models */,
-				7A54023E1C3FC33E00F232F6 /* jingxuan.plist */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -420,17 +436,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A3A80D61C3F5D40004F6BA9 /* Theme.plist in Resources */,
+				7ACC8CBC1C41268F00EEE30A /* hott.plist in Resources */,
 				7A5402331C3F9E3A00F232F6 /* blueArrowDown.png in Resources */,
 				7A9683DF1C3A766D00C191D8 /* MainTableViewCell.xib in Resources */,
 				7A96835D1C3A507200C191D8 /* Main.storyboard in Resources */,
+				7ACC8CBA1C41218B00EEE30A /* jingxuan 19-07-11-054.plist in Resources */,
 				7A5402321C3F9E3A00F232F6 /* blueArrow.png in Resources */,
 				7A96835F1C3A508F00C191D8 /* Discover.storyboard in Resources */,
 				7A9683611C3A50C400C191D8 /* Mine.storyboard in Resources */,
 				7A076FC41C3A1C5500D10A90 /* Assets.xcassets in Resources */,
-				7A54023F1C3FC33E00F232F6 /* jingxuan.plist in Resources */,
 				7A77E33D1C3D1BBB000C9CCA /* Fileactivity\ in Resources */,
 				7A5402391C3FA3AA00F232F6 /* JingTableViewCell.xib in Resources */,
 				7A076FC71C3A1C5500D10A90 /* LaunchScreen.storyboard in Resources */,
+				7ACC8CC41C41287A00EEE30A /* HotTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +508,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AC4C30E1C3E5B0800ED3E1E /* UIView+Extension.m in Sources */,
+				7ACC8CC71C4131A100EEE30A /* hotModel.m in Sources */,
 				7A54022C1C3F999800F232F6 /* ActivityThemeView.m in Sources */,
 				7A5402381C3FA3AA00F232F6 /* JingTableViewCell.m in Sources */,
 				7A9683DE1C3A766D00C191D8 /* MainTableViewCell.m in Sources */,
@@ -506,6 +525,7 @@
 				7AC4C30B1C3E4C5000ED3E1E /* HWTool.m in Sources */,
 				7AF54FBA1C3E10EA00006EE3 /* ActivityDetailView.m in Sources */,
 				7ACDBFC41C3CBDC8007B7CB8 /* searchViewController.m in Sources */,
+				7ACC8CC31C41287A00EEE30A /* HotTableViewCell.m in Sources */,
 				7A54023C1C3FBE7300F232F6 /* jingModel.m in Sources */,
 				7ACDBFD31C3CC0E4007B7CB8 /* jingActivityViewController.m in Sources */,
 				7A3A808D1C3F3AE0004F6BA9 /* MainModel.m in Sources */,

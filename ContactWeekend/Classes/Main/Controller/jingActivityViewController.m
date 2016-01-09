@@ -16,6 +16,7 @@
 }
 @property(nonatomic, strong) PullingRefreshTableView *tableView;
 @property(nonatomic, assign) BOOL refreshing;
+@property(nonatomic, strong) NSMutableArray *jingArray;
 
 
 @end
@@ -26,7 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"精选活动";
-    self.view.backgroundColor = [UIColor yellowColor];
+   
     [self showBackButton];
     self.tabBarController.tabBar.hidden = YES;
       [self.view addSubview:self.tableView];
@@ -42,13 +43,15 @@
 #pragma mark ------- UITableViewDataSource 2各方
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    GFFLog(@"====++++++++++++++===%lu", self.jingArray.count);
+    return self.jingArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     JingTableViewCell *jingcell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    jingcell.backgroundColor = [UIColor brownColor];
+   
+    jingcell.jingModel = self.jingArray[indexPath.row];
     return jingcell;
 
     
@@ -82,7 +85,27 @@
     [sessionManger GET:[NSString stringWithFormat:@"%@&page=%ld", KGoodActivity, _pageCount] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dic = responseObject;
         
+        NSInteger code = [dic[@"code"] integerValue];
+        
+        NSString *status = dic[@"status"];
+        
+        if ([status isEqualToString:@"success"] && code == 0) {
+            NSDictionary *dict = dic[@"success"];
+           
+            NSArray *acData = dict[@"acData"];
+            
+            for (NSDictionary *acdataDic in acData) {
+                jingModel *model = [[jingModel alloc] initWithDictionary:acdataDic];
+                 [self.jingArray addObject:model];
+                GFFLog(@"========%lu", self.jingArray.count);
+            }
+             [self.tableView reloadData];
+        }
+        
+       
+
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
@@ -101,7 +124,14 @@
     
     
 }
-
+- (NSMutableArray *)jingArray{
+    if (_jingArray == nil) {
+        self.jingArray = [NSMutableArray new];
+    }
+    return _jingArray;
+    
+    
+}
 //手指开始拖动
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     [self.tableView tableViewDidScroll:scrollView];
@@ -119,6 +149,7 @@
         self.tableView.rowHeight = 90;
         self.tableView.dataSource = self;
         self.tableView.delegate = self;
+        self.tableView.separatorColor = [UIColor whiteColor];
     }
     return _tableView;
     
