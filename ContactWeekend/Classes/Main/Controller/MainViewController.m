@@ -329,8 +329,28 @@
 - (void)mainActivityButtonAction:(UIButton *)btn{
     ClassListViewController *classListVC = [[ClassListViewController alloc] init];
     [self.navigationController pushViewController:classListVC animated:YES];
+    switch (btn.tag) {
+        case 100:{
+            classListVC.selectIndex = 0;
+            classListVC.buttonId = @"6";
+        }break;
+        case 101:{
+            classListVC.selectIndex = 1;
+            classListVC.buttonId = @"23";
+        } break;
+        case 102:{
+            classListVC.selectIndex = 2;
+            classListVC.buttonId = @"22";
+        }   break;
+        case 103:{
+            classListVC.selectIndex = 3;
+            classListVC.buttonId = @"21";
+        }    break;
+        default:
+            break;
+    }
     
-            }
+}
 - (void)requestModel{    
 //    NSString *str = [NSString stringWithFormat:kMainDataList];
     AFHTTPSessionManager *sessionManger = [AFHTTPSessionManager manager];

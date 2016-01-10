@@ -17,8 +17,6 @@
 		7A5402321C3F9E3A00F232F6 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A54022E1C3F9E3A00F232F6 /* blueArrow.png */; };
 		7A5402331C3F9E3A00F232F6 /* blueArrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A54022F1C3F9E3A00F232F6 /* blueArrowDown.png */; };
 		7A5402341C3F9E3A00F232F6 /* PullingRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5402311C3F9E3A00F232F6 /* PullingRefreshTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7A5402381C3FA3AA00F232F6 /* JingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5402361C3FA3AA00F232F6 /* JingTableViewCell.m */; };
-		7A5402391C3FA3AA00F232F6 /* JingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A5402371C3FA3AA00F232F6 /* JingTableViewCell.xib */; };
 		7A54023C1C3FBE7300F232F6 /* jingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A54023B1C3FBE7300F232F6 /* jingModel.m */; };
 		7A77E33D1C3D1BBB000C9CCA /* Fileactivity\ in Resources */ = {isa = PBXBuildFile; fileRef = 7A77E33C1C3D1BBB000C9CCA /* Fileactivity\ */; };
 		7A77E3401C3D2024000C9CCA /* UIViewController+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A77E33F1C3D2024000C9CCA /* UIViewController+Common.m */; };
@@ -44,6 +42,9 @@
 		7ACDBFCD1C3CBFF8007B7CB8 /* ClassListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACDBFCC1C3CBFF8007B7CB8 /* ClassListViewController.m */; };
 		7ACDBFD31C3CC0E4007B7CB8 /* jingActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACDBFD21C3CC0E4007B7CB8 /* jingActivityViewController.m */; };
 		7ACDBFD61C3CC287007B7CB8 /* HotActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACDBFD51C3CC287007B7CB8 /* HotActivityViewController.m */; };
+		7AE782011C420A3900F9ECB9 /* JingXuanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE781FF1C420A3900F9ECB9 /* JingXuanTableViewCell.m */; };
+		7AE782021C420A3900F9ECB9 /* JingXuanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AE782001C420A3900F9ECB9 /* JingXuanTableViewCell.xib */; };
+		7AE782091C422B0200F9ECB9 /* list.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AE782081C422B0200F9ECB9 /* list.plist */; };
 		7AF54FBA1C3E10EA00006EE3 /* ActivityDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF54FB91C3E10EA00006EE3 /* ActivityDetailView.m */; };
 		F07347EDF382422A7EE6D050 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D73AE67FE81CCA38FE3929 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -67,9 +68,6 @@
 		7A54022F1C3F9E3A00F232F6 /* blueArrowDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrowDown.png; sourceTree = "<group>"; };
 		7A5402301C3F9E3A00F232F6 /* PullingRefreshTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullingRefreshTableView.h; sourceTree = "<group>"; };
 		7A5402311C3F9E3A00F232F6 /* PullingRefreshTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullingRefreshTableView.m; sourceTree = "<group>"; };
-		7A5402351C3FA3AA00F232F6 /* JingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JingTableViewCell.h; path = ../Controller/JingTableViewCell.h; sourceTree = "<group>"; };
-		7A5402361C3FA3AA00F232F6 /* JingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JingTableViewCell.m; path = ../Controller/JingTableViewCell.m; sourceTree = "<group>"; };
-		7A5402371C3FA3AA00F232F6 /* JingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JingTableViewCell.xib; path = ../Controller/JingTableViewCell.xib; sourceTree = "<group>"; };
 		7A54023A1C3FBE7300F232F6 /* jingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jingModel.h; sourceTree = "<group>"; };
 		7A54023B1C3FBE7300F232F6 /* jingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jingModel.m; sourceTree = "<group>"; };
 		7A54023D1C3FBFA100F232F6 /* jingActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jingActivityViewController.h; sourceTree = "<group>"; };
@@ -114,6 +112,10 @@
 		7ACDBFD21C3CC0E4007B7CB8 /* jingActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jingActivityViewController.m; sourceTree = "<group>"; };
 		7ACDBFD41C3CC287007B7CB8 /* HotActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotActivityViewController.h; sourceTree = "<group>"; };
 		7ACDBFD51C3CC287007B7CB8 /* HotActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotActivityViewController.m; sourceTree = "<group>"; };
+		7AE781FE1C420A3800F9ECB9 /* JingXuanTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JingXuanTableViewCell.h; sourceTree = "<group>"; };
+		7AE781FF1C420A3900F9ECB9 /* JingXuanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JingXuanTableViewCell.m; sourceTree = "<group>"; };
+		7AE782001C420A3900F9ECB9 /* JingXuanTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JingXuanTableViewCell.xib; sourceTree = "<group>"; };
+		7AE782081C422B0200F9ECB9 /* list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = list.plist; sourceTree = "<group>"; };
 		7AF54FB81C3E10EA00006EE3 /* ActivityDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDetailView.h; sourceTree = "<group>"; };
 		7AF54FB91C3E10EA00006EE3 /* ActivityDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetailView.m; sourceTree = "<group>"; };
 		B08E8A6BF279B69CCBA144E1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -298,9 +300,9 @@
 		7A9683511C3A4E3E00C191D8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7A5402351C3FA3AA00F232F6 /* JingTableViewCell.h */,
-				7A5402361C3FA3AA00F232F6 /* JingTableViewCell.m */,
-				7A5402371C3FA3AA00F232F6 /* JingTableViewCell.xib */,
+				7AE781FE1C420A3800F9ECB9 /* JingXuanTableViewCell.h */,
+				7AE781FF1C420A3900F9ECB9 /* JingXuanTableViewCell.m */,
+				7AE782001C420A3900F9ECB9 /* JingXuanTableViewCell.xib */,
 				7A54022A1C3F999800F232F6 /* ActivityThemeView.h */,
 				7A54022B1C3F999800F232F6 /* ActivityThemeView.m */,
 				7A96835C1C3A507200C191D8 /* Main.storyboard */,
@@ -312,6 +314,7 @@
 				7ACC8CC01C41287A00EEE30A /* HotTableViewCell.h */,
 				7ACC8CC11C41287A00EEE30A /* HotTableViewCell.m */,
 				7ACC8CC21C41287A00EEE30A /* HotTableViewCell.xib */,
+				7AE782081C422B0200F9ECB9 /* list.plist */,
 				7A3A808A1C3F3AE0004F6BA9 /* Models */,
 			);
 			path = View;
@@ -435,8 +438,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AE782091C422B0200F9ECB9 /* list.plist in Resources */,
 				7A3A80D61C3F5D40004F6BA9 /* Theme.plist in Resources */,
 				7ACC8CBC1C41268F00EEE30A /* hott.plist in Resources */,
+				7AE782021C420A3900F9ECB9 /* JingXuanTableViewCell.xib in Resources */,
 				7A5402331C3F9E3A00F232F6 /* blueArrowDown.png in Resources */,
 				7A9683DF1C3A766D00C191D8 /* MainTableViewCell.xib in Resources */,
 				7A96835D1C3A507200C191D8 /* Main.storyboard in Resources */,
@@ -446,7 +451,6 @@
 				7A9683611C3A50C400C191D8 /* Mine.storyboard in Resources */,
 				7A076FC41C3A1C5500D10A90 /* Assets.xcassets in Resources */,
 				7A77E33D1C3D1BBB000C9CCA /* Fileactivity\ in Resources */,
-				7A5402391C3FA3AA00F232F6 /* JingTableViewCell.xib in Resources */,
 				7A076FC71C3A1C5500D10A90 /* LaunchScreen.storyboard in Resources */,
 				7ACC8CC41C41287A00EEE30A /* HotTableViewCell.xib in Resources */,
 			);
@@ -510,7 +514,6 @@
 				7AC4C30E1C3E5B0800ED3E1E /* UIView+Extension.m in Sources */,
 				7ACC8CC71C4131A100EEE30A /* hotModel.m in Sources */,
 				7A54022C1C3F999800F232F6 /* ActivityThemeView.m in Sources */,
-				7A5402381C3FA3AA00F232F6 /* JingTableViewCell.m in Sources */,
 				7A9683DE1C3A766D00C191D8 /* MainTableViewCell.m in Sources */,
 				7ACDBFD61C3CC287007B7CB8 /* HotActivityViewController.m in Sources */,
 				7A076FC21C3A1C5500D10A90 /* AppDelegate.m in Sources */,
@@ -521,6 +524,7 @@
 				7ACDBFC11C3CBC47007B7CB8 /* SelectCityViewController.m in Sources */,
 				7A5402341C3F9E3A00F232F6 /* PullingRefreshTableView.m in Sources */,
 				7ACDBFCA1C3CBF3D007B7CB8 /* ThemeViewController.m in Sources */,
+				7AE782011C420A3900F9ECB9 /* JingXuanTableViewCell.m in Sources */,
 				7A9683591C3A4E3E00C191D8 /* MainViewController.m in Sources */,
 				7AC4C30B1C3E4C5000ED3E1E /* HWTool.m in Sources */,
 				7AF54FBA1C3E10EA00006EE3 /* ActivityDetailView.m in Sources */,

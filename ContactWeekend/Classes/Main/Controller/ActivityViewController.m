@@ -37,7 +37,6 @@
     
    [self showBackButton];
    [self getModel];
-      //self.tabBarController.hidesBottomBarWhenPushed = YES;
     
 }
 
@@ -65,10 +64,13 @@
     AFHTTPSessionManager *sessionManger = [AFHTTPSessionManager manager];
     
     sessionManger.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"加载数据";
    // [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [sessionManger GET:[NSString stringWithFormat:@"%@&id=%@",kActivityDetail, self.activityId] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
       //   [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [hud removeFromSuperview];
+
       
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
        // [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -83,7 +85,8 @@
             self.activityDetailView.dataDic= successDic;
             
             self.phoneNum = successDic[@"tel"];
-         
+            [hud removeFromSuperview];
+
         }else{
             
         }
@@ -91,7 +94,8 @@
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
       //  [MBProgressHUD hideHUDForView:self.view animated:YES];
-        
+        [hud removeFromSuperview];
+
     }];
     
 }

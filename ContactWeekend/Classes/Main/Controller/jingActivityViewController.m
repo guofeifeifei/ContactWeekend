@@ -8,7 +8,8 @@
 
 #import "jingActivityViewController.h"
 #import "PullingRefreshTableView.h"
-#import "JingTableViewCell.h"
+#import "JingXuanTableViewCell.h"
+#import <MBProgressHUD.h>
 #import <AFNetworking/AFHTTPSessionManager.h>
 @interface jingActivityViewController ()<UITableViewDataSource, UITableViewDelegate, PullingRefreshTableViewDelegate>
 {
@@ -33,7 +34,7 @@
       [self.view addSubview:self.tableView];
     self.tableView.tableFooterView = [[UIView alloc] init];
     //注册
-    [self.tableView registerNib:[UINib nibWithNibName:@"JingTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"JingXuanTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     
   
     [self.tableView launchRefreshing];
@@ -49,7 +50,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    JingTableViewCell *jingcell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    JingXuanTableViewCell *jingcell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
    
     jingcell.jingModel = self.jingArray[indexPath.row];
     return jingcell;
@@ -81,9 +82,10 @@
 - (void)loadData{
        AFHTTPSessionManager *sessionManger = [AFHTTPSessionManager manager];
     sessionManger.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"加载数据";
     [sessionManger GET:[NSString stringWithFormat:@"%@&page=%ld", KGoodActivity, _pageCount] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        
+        [hud removeFromSuperview];
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = responseObject;
         
@@ -99,16 +101,16 @@
             for (NSDictionary *acdataDic in acData) {
                 jingModel *model = [[jingModel alloc] initWithDictionary:acdataDic];
                  [self.jingArray addObject:model];
-                GFFLog(@"========%lu", self.jingArray.count);
+               // GFFLog(@"========%lu", self.jingArray.count);
             }
              [self.tableView reloadData];
         }
         
        
-
+        [hud removeFromSuperview];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+        [hud removeFromSuperview];
     }];
     
     GFFLog(@"12312");
@@ -146,10 +148,10 @@
 - (PullingRefreshTableView *)tableView{
     if (_tableView == nil) {
         self.tableView = [[PullingRefreshTableView alloc] initWithFrame:CGRectMake(0, 0, kWidth, kHeight - 64) pullingDelegate:self];
-        self.tableView.rowHeight = 90;
+        self.tableView.rowHeight = 120;
         self.tableView.dataSource = self;
         self.tableView.delegate = self;
-        self.tableView.separatorColor = [UIColor whiteColor];
+        
     }
     return _tableView;
     

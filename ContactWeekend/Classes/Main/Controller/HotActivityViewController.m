@@ -9,6 +9,7 @@
 #import "HotActivityViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "HotTableViewCell.h"
+#import <MBProgressHUD.h>
 #import "PullingRefreshTableView.h"
 
 @interface HotActivityViewController ()<UITableViewDataSource, UITableViewDelegate, PullingRefreshTableViewDelegate>
@@ -107,8 +108,11 @@
 - (void)loadData{
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"加载数据";
     [sessionManager GET:[NSString stringWithFormat:@"%@&page=%ld", KHotActivity, _pageCount] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         GFFLog(@"%@", downloadProgress);
+        [hud removeFromSuperview];
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = responseObject;
         NSInteger code = [dic[@"code"] integerValue];
@@ -123,10 +127,12 @@
             }
             [self.tableView reloadData];
         }
-        GFFLog(@"%@", self.hotArray);
+       // GFFLog(@"%@", self.hotArray);
+        [hud removeFromSuperview];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         GFFLog(@"%@", error);
+        [hud removeFromSuperview];
     }];
     
     
