@@ -8,6 +8,17 @@
 
 #ifndef Contactdefine_h
 #define Contactdefine_h
+typedef NS_ENUM(NSInteger, ClassifyListType) {
+    
+    ClassifyListTypeShowRepertoire = 1, //演出剧目
+    ClassifyListTypeTouristPlace,//景点场剧
+    ClassifyListTypeStudyPUZ,//学习益智
+    ClassifyListTypeTravel,//亲子旅游
+    
+    
+};
+
+
 //首页数据接口
 //以后把所有的接口放在HWDefine中
 #define kMainDataList @"http://e.kumi.cn/app/v1.3/index.php?_s_=02a411494fa910f5177d82a6b0a63788&_t_=1451307342&channelid=appstore&cityid=1&lat=34.62172291944134&limit=30&lng=112.4149512442411&page=1"
@@ -25,6 +36,12 @@
 #define KHotActivity @"http://e.kumi.cn/app/positionlist.php?_s_=e2b71c66789428d5385b06c178a88db2&_t_=1452237051&channelid=appstore&cityid=1&lat=34.61351314785497&limit=30&lng=112.4140755658942&page=1"
 
 //按钮
-#define kButtonActivity @"http://e.kumi.cn/app/v1.3/catelist.php?_s_=94caa3db2bf10b313499712cba00e30c&_t_=1452399959&channelid=appstore&cityid=1&lat=34.61358493783437&limit=30&lng=112.4140368252746&page=1"
+#define kClassList @"http://e.kumi.cn/app/v1.3/catelist.php?_s_=dad924a9b9cd534b53fc2c521e9f8e84&_t_=1452495193&channelid=appstore&cityid=1&lat=34.61356398594803&limit=30&lng=112.4140434532402"
+
+
+//#define kClassList @"http://e.kumi.cn/app/v1.3/catelist.php?_s_=dad924a9b9cd534b53fc2c521e9f8e84&_t_=1452495193&channelid=appstore&cityid=1&lat=34.61356398594803&limit=30&lng=112.4140434532402"
+
+#define kDiscover @"http://e.kumi.cn/app/found.php?_s_=a82c7d49216aedb18c04a20fd9b0d5b2&_t_=1451310230&channelid=appstore&cityid=1&lat=34.62172291944134&lng=112.4149512442411"
+
 
 #endif /* Contactdefine_h */

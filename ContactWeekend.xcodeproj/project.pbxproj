@@ -11,6 +11,8 @@
 		7A076FC21C3A1C5500D10A90 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A076FC11C3A1C5500D10A90 /* AppDelegate.m */; };
 		7A076FC41C3A1C5500D10A90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A076FC31C3A1C5500D10A90 /* Assets.xcassets */; };
 		7A076FC71C3A1C5500D10A90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A076FC51C3A1C5500D10A90 /* LaunchScreen.storyboard */; };
+		7A1A9A361C449F67000AA3B1 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7A1A9A331C449F67000AA3B1 /* ProgressHUD.bundle */; };
+		7A1A9A371C449F67000AA3B1 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1A9A351C449F67000AA3B1 /* ProgressHUD.m */; };
 		7A3A808D1C3F3AE0004F6BA9 /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3A808C1C3F3AE0004F6BA9 /* MainModel.m */; };
 		7A3A80D61C3F5D40004F6BA9 /* Theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A3A80D51C3F5D40004F6BA9 /* Theme.plist */; };
 		7A54022C1C3F999800F232F6 /* ActivityThemeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A54022B1C3F999800F232F6 /* ActivityThemeView.m */; };
@@ -20,6 +22,10 @@
 		7A54023C1C3FBE7300F232F6 /* jingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A54023B1C3FBE7300F232F6 /* jingModel.m */; };
 		7A77E33D1C3D1BBB000C9CCA /* Fileactivity\ in Resources */ = {isa = PBXBuildFile; fileRef = 7A77E33C1C3D1BBB000C9CCA /* Fileactivity\ */; };
 		7A77E3401C3D2024000C9CCA /* UIViewController+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A77E33F1C3D2024000C9CCA /* UIViewController+Common.m */; };
+		7A8F258F1C44FA9400F027B8 /* DiscoverTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F258D1C44FA9400F027B8 /* DiscoverTableViewCell.m */; };
+		7A8F25901C44FA9400F027B8 /* DiscoverTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A8F258E1C44FA9400F027B8 /* DiscoverTableViewCell.xib */; };
+		7A8F25DE1C450ECA00F027B8 /* discover.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A8F25DD1C450ECA00F027B8 /* discover.plist */; };
+		7A8F25E11C45127100F027B8 /* DiscoverModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F25E01C45127100F027B8 /* DiscoverModel.m */; };
 		7A9683581C3A4E3E00C191D8 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9683491C3A4E3E00C191D8 /* DiscoverViewController.m */; };
 		7A9683591C3A4E3E00C191D8 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A96834F1C3A4E3E00C191D8 /* MainViewController.m */; };
 		7A96835A1C3A4E3E00C191D8 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9683551C3A4E3E00C191D8 /* MineViewController.m */; };
@@ -28,6 +34,14 @@
 		7A9683611C3A50C400C191D8 /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A9683601C3A50C400C191D8 /* Mine.storyboard */; };
 		7A9683DE1C3A766D00C191D8 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9683DC1C3A766D00C191D8 /* MainTableViewCell.m */; };
 		7A9683DF1C3A766D00C191D8 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9683DD1C3A766D00C191D8 /* MainTableViewCell.xib */; };
+		7AA4C4431C4391AC00EDFB08 /* VOContentLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA4C43C1C4391AC00EDFB08 /* VOContentLayer.m */; };
+		7AA4C4441C4391AC00EDFB08 /* VOIndicatorAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA4C43E1C4391AC00EDFB08 /* VOIndicatorAnimation.m */; };
+		7AA4C4451C4391AC00EDFB08 /* VOSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA4C4401C4391AC00EDFB08 /* VOSegment.m */; };
+		7AA4C4461C4391AC00EDFB08 /* VOSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA4C4421C4391AC00EDFB08 /* VOSegmentedControl.m */; };
+		7AA4C44B1C43A87C00EDFB08 /* typeid6.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AA4C4471C43A87C00EDFB08 /* typeid6.plist */; };
+		7AA4C44C1C43A87C00EDFB08 /* typeid22.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AA4C4481C43A87C00EDFB08 /* typeid22.plist */; };
+		7AA4C44D1C43A87C00EDFB08 /* typeid23.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AA4C4491C43A87C00EDFB08 /* typeid23.plist */; };
+		7AA4C44E1C43A87C00EDFB08 /* typeud21.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AA4C44A1C43A87C00EDFB08 /* typeud21.plist */; };
 		7AC4C30B1C3E4C5000ED3E1E /* HWTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC4C30A1C3E4C5000ED3E1E /* HWTool.m */; };
 		7AC4C30E1C3E5B0800ED3E1E /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC4C30D1C3E5B0800ED3E1E /* UIView+Extension.m */; };
 		7ACC8CBA1C41218B00EEE30A /* jingxuan 19-07-11-054.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ACC8CB91C41218B00EEE30A /* jingxuan 19-07-11-054.plist */; };
@@ -59,6 +73,9 @@
 		7A076FC31C3A1C5500D10A90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A076FC61C3A1C5500D10A90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A076FC81C3A1C5500D10A90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A1A9A331C449F67000AA3B1 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		7A1A9A341C449F67000AA3B1 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		7A1A9A351C449F67000AA3B1 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		7A3A808B1C3F3AE0004F6BA9 /* MainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
 		7A3A808C1C3F3AE0004F6BA9 /* MainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainModel.m; sourceTree = "<group>"; };
 		7A3A80D51C3F5D40004F6BA9 /* Theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Theme.plist; sourceTree = "<group>"; };
@@ -74,6 +91,12 @@
 		7A77E33C1C3D1BBB000C9CCA /* Fileactivity\ */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Fileactivity\\"; sourceTree = "<group>"; };
 		7A77E33E1C3D2024000C9CCA /* UIViewController+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Common.h"; path = "../Classes/Main/Controller/UIViewController+Common.h"; sourceTree = "<group>"; };
 		7A77E33F1C3D2024000C9CCA /* UIViewController+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Common.m"; path = "../Classes/Main/Controller/UIViewController+Common.m"; sourceTree = "<group>"; };
+		7A8F258C1C44FA9400F027B8 /* DiscoverTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverTableViewCell.h; sourceTree = "<group>"; };
+		7A8F258D1C44FA9400F027B8 /* DiscoverTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverTableViewCell.m; sourceTree = "<group>"; };
+		7A8F258E1C44FA9400F027B8 /* DiscoverTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoverTableViewCell.xib; sourceTree = "<group>"; };
+		7A8F25DD1C450ECA00F027B8 /* discover.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = discover.plist; sourceTree = "<group>"; };
+		7A8F25DF1C45127100F027B8 /* DiscoverModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverModel.h; sourceTree = "<group>"; };
+		7A8F25E01C45127100F027B8 /* DiscoverModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverModel.m; sourceTree = "<group>"; };
 		7A9683481C3A4E3E00C191D8 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
 		7A9683491C3A4E3E00C191D8 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
 		7A96834E1C3A4E3E00C191D8 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -86,6 +109,18 @@
 		7A9683DB1C3A766D00C191D8 /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
 		7A9683DC1C3A766D00C191D8 /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
 		7A9683DD1C3A766D00C191D8 /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		7AA4C43B1C4391AC00EDFB08 /* VOContentLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOContentLayer.h; sourceTree = "<group>"; };
+		7AA4C43C1C4391AC00EDFB08 /* VOContentLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOContentLayer.m; sourceTree = "<group>"; };
+		7AA4C43D1C4391AC00EDFB08 /* VOIndicatorAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOIndicatorAnimation.h; sourceTree = "<group>"; };
+		7AA4C43E1C4391AC00EDFB08 /* VOIndicatorAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOIndicatorAnimation.m; sourceTree = "<group>"; };
+		7AA4C43F1C4391AC00EDFB08 /* VOSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOSegment.h; sourceTree = "<group>"; };
+		7AA4C4401C4391AC00EDFB08 /* VOSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOSegment.m; sourceTree = "<group>"; };
+		7AA4C4411C4391AC00EDFB08 /* VOSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOSegmentedControl.h; sourceTree = "<group>"; };
+		7AA4C4421C4391AC00EDFB08 /* VOSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOSegmentedControl.m; sourceTree = "<group>"; };
+		7AA4C4471C43A87C00EDFB08 /* typeid6.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = typeid6.plist; sourceTree = "<group>"; };
+		7AA4C4481C43A87C00EDFB08 /* typeid22.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = typeid22.plist; sourceTree = "<group>"; };
+		7AA4C4491C43A87C00EDFB08 /* typeid23.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = typeid23.plist; sourceTree = "<group>"; };
+		7AA4C44A1C43A87C00EDFB08 /* typeud21.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = typeud21.plist; sourceTree = "<group>"; };
 		7AC4C3091C3E4C5000ED3E1E /* HWTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HWTool.h; path = ../Classes/Main/View/HWTool.h; sourceTree = "<group>"; };
 		7AC4C30A1C3E4C5000ED3E1E /* HWTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HWTool.m; path = ../Classes/Main/View/HWTool.m; sourceTree = "<group>"; };
 		7AC4C30C1C3E5B0800ED3E1E /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Extension.h"; path = "../Classes/Main/View/UIView+Extension.h"; sourceTree = "<group>"; };
@@ -192,6 +227,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7A1A9A321C449F67000AA3B1 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				7A1A9A331C449F67000AA3B1 /* ProgressHUD.bundle */,
+				7A1A9A341C449F67000AA3B1 /* ProgressHUD.h */,
+				7A1A9A351C449F67000AA3B1 /* ProgressHUD.m */,
+			);
+			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
 		7A3A808A1C3F3AE0004F6BA9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				7A9683481C3A4E3E00C191D8 /* DiscoverViewController.h */,
+				7A8F25DD1C450ECA00F027B8 /* discover.plist */,
 				7A9683491C3A4E3E00C191D8 /* DiscoverViewController.m */,
 			);
 			path = Controller;
@@ -250,6 +296,8 @@
 		7A96834A1C3A4E3E00C191D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7A8F25DF1C45127100F027B8 /* DiscoverModel.h */,
+				7A8F25E01C45127100F027B8 /* DiscoverModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -257,6 +305,9 @@
 		7A96834B1C3A4E3E00C191D8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7A8F258C1C44FA9400F027B8 /* DiscoverTableViewCell.h */,
+				7A8F258D1C44FA9400F027B8 /* DiscoverTableViewCell.m */,
+				7A8F258E1C44FA9400F027B8 /* DiscoverTableViewCell.xib */,
 				7A96835E1C3A508F00C191D8 /* Discover.storyboard */,
 			);
 			path = View;
@@ -293,6 +344,10 @@
 				7ACDBFD41C3CC287007B7CB8 /* HotActivityViewController.h */,
 				7ACDBFD51C3CC287007B7CB8 /* HotActivityViewController.m */,
 				7ACC8CBB1C41268F00EEE30A /* hott.plist */,
+				7AA4C4471C43A87C00EDFB08 /* typeid6.plist */,
+				7AA4C4481C43A87C00EDFB08 /* typeid22.plist */,
+				7AA4C4491C43A87C00EDFB08 /* typeid23.plist */,
+				7AA4C44A1C43A87C00EDFB08 /* typeud21.plist */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -361,9 +416,26 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		7AA4C43A1C4391AC00EDFB08 /* VOSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				7AA4C43B1C4391AC00EDFB08 /* VOContentLayer.h */,
+				7AA4C43C1C4391AC00EDFB08 /* VOContentLayer.m */,
+				7AA4C43D1C4391AC00EDFB08 /* VOIndicatorAnimation.h */,
+				7AA4C43E1C4391AC00EDFB08 /* VOIndicatorAnimation.m */,
+				7AA4C43F1C4391AC00EDFB08 /* VOSegment.h */,
+				7AA4C4401C4391AC00EDFB08 /* VOSegment.m */,
+				7AA4C4411C4391AC00EDFB08 /* VOSegmentedControl.h */,
+				7AA4C4421C4391AC00EDFB08 /* VOSegmentedControl.m */,
+			);
+			path = VOSegmentedControl;
+			sourceTree = "<group>";
+		};
 		7ACDBFBA1C3CB162007B7CB8 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				7A1A9A321C449F67000AA3B1 /* ProgressHUD */,
+				7AA4C43A1C4391AC00EDFB08 /* VOSegmentedControl */,
 				7A54022D1C3F9E3A00F232F6 /* PullingRefreshTableView */,
 				7A77E33E1C3D2024000C9CCA /* UIViewController+Common.h */,
 				7A77E33F1C3D2024000C9CCA /* UIViewController+Common.m */,
@@ -438,18 +510,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA4C44C1C43A87C00EDFB08 /* typeid22.plist in Resources */,
 				7AE782091C422B0200F9ECB9 /* list.plist in Resources */,
+				7A8F25901C44FA9400F027B8 /* DiscoverTableViewCell.xib in Resources */,
 				7A3A80D61C3F5D40004F6BA9 /* Theme.plist in Resources */,
 				7ACC8CBC1C41268F00EEE30A /* hott.plist in Resources */,
 				7AE782021C420A3900F9ECB9 /* JingXuanTableViewCell.xib in Resources */,
 				7A5402331C3F9E3A00F232F6 /* blueArrowDown.png in Resources */,
+				7AA4C44D1C43A87C00EDFB08 /* typeid23.plist in Resources */,
 				7A9683DF1C3A766D00C191D8 /* MainTableViewCell.xib in Resources */,
+				7A1A9A361C449F67000AA3B1 /* ProgressHUD.bundle in Resources */,
 				7A96835D1C3A507200C191D8 /* Main.storyboard in Resources */,
 				7ACC8CBA1C41218B00EEE30A /* jingxuan 19-07-11-054.plist in Resources */,
 				7A5402321C3F9E3A00F232F6 /* blueArrow.png in Resources */,
+				7A8F25DE1C450ECA00F027B8 /* discover.plist in Resources */,
 				7A96835F1C3A508F00C191D8 /* Discover.storyboard in Resources */,
 				7A9683611C3A50C400C191D8 /* Mine.storyboard in Resources */,
 				7A076FC41C3A1C5500D10A90 /* Assets.xcassets in Resources */,
+				7AA4C44B1C43A87C00EDFB08 /* typeid6.plist in Resources */,
+				7AA4C44E1C43A87C00EDFB08 /* typeud21.plist in Resources */,
 				7A77E33D1C3D1BBB000C9CCA /* Fileactivity\ in Resources */,
 				7A076FC71C3A1C5500D10A90 /* LaunchScreen.storyboard in Resources */,
 				7ACC8CC41C41287A00EEE30A /* HotTableViewCell.xib in Resources */,
@@ -512,8 +591,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AC4C30E1C3E5B0800ED3E1E /* UIView+Extension.m in Sources */,
+				7AA4C4441C4391AC00EDFB08 /* VOIndicatorAnimation.m in Sources */,
 				7ACC8CC71C4131A100EEE30A /* hotModel.m in Sources */,
+				7AA4C4431C4391AC00EDFB08 /* VOContentLayer.m in Sources */,
 				7A54022C1C3F999800F232F6 /* ActivityThemeView.m in Sources */,
+				7AA4C4451C4391AC00EDFB08 /* VOSegment.m in Sources */,
+				7A8F258F1C44FA9400F027B8 /* DiscoverTableViewCell.m in Sources */,
 				7A9683DE1C3A766D00C191D8 /* MainTableViewCell.m in Sources */,
 				7ACDBFD61C3CC287007B7CB8 /* HotActivityViewController.m in Sources */,
 				7A076FC21C3A1C5500D10A90 /* AppDelegate.m in Sources */,
@@ -521,6 +604,8 @@
 				7A96835A1C3A4E3E00C191D8 /* MineViewController.m in Sources */,
 				7A076FBF1C3A1C5500D10A90 /* main.m in Sources */,
 				7ACDBFCD1C3CBFF8007B7CB8 /* ClassListViewController.m in Sources */,
+				7A8F25E11C45127100F027B8 /* DiscoverModel.m in Sources */,
+				7AA4C4461C4391AC00EDFB08 /* VOSegmentedControl.m in Sources */,
 				7ACDBFC11C3CBC47007B7CB8 /* SelectCityViewController.m in Sources */,
 				7A5402341C3F9E3A00F232F6 /* PullingRefreshTableView.m in Sources */,
 				7ACDBFCA1C3CBF3D007B7CB8 /* ThemeViewController.m in Sources */,
@@ -528,6 +613,7 @@
 				7A9683591C3A4E3E00C191D8 /* MainViewController.m in Sources */,
 				7AC4C30B1C3E4C5000ED3E1E /* HWTool.m in Sources */,
 				7AF54FBA1C3E10EA00006EE3 /* ActivityDetailView.m in Sources */,
+				7A1A9A371C449F67000AA3B1 /* ProgressHUD.m in Sources */,
 				7ACDBFC41C3CBDC8007B7CB8 /* searchViewController.m in Sources */,
 				7ACC8CC31C41287A00EEE30A /* HotTableViewCell.m in Sources */,
 				7A54023C1C3FBE7300F232F6 /* jingModel.m in Sources */,

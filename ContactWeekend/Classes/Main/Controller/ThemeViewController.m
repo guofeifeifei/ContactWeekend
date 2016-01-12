@@ -10,7 +10,7 @@
 #import "ThemeViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "ActivityThemeView.h"
-#import <MBProgressHUD.h>
+
 @interface ThemeViewController ()
 @property(nonatomic, strong) ActivityThemeView *themeView;
 @end
@@ -36,13 +36,11 @@
 
 - (void)getModel{
     AFHTTPSessionManager *sessionManger = [AFHTTPSessionManager manager];
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"加载数据";
+   
     sessionManger.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
         [sessionManger GET:[NSString stringWithFormat:@"%@&id=%@",kThemeDetail, self.themeid] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
             GFFLog(@"downloadProgress = %@", downloadProgress);
-            [hud removeFromSuperview];
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
        
         NSDictionary *dic = responseObject;
         NSString *status = dic[@"status"];
@@ -51,22 +49,17 @@
             self.themeView.dataDic = dic[@"success" ];
             self.navigationItem.title = dic[@"success"][@"title"];
           
-            
-           
-            
         }else{
             
-            
-            
+
         }
         
-        [hud removeFromSuperview];
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         GFFLog(@"error = %@", error);
          }];
     
-    [hud removeFromSuperview];
-    
+       
     
     
 }

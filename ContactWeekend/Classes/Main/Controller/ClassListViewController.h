@@ -10,5 +10,5 @@
 
 @interface ClassListViewController : UIViewController
 @property(nonatomic, copy) NSString *buttonId;
-@property(nonatomic, assign) NSInteger selectIndex;
+@property(nonatomic, assign) ClassifyListType classifyListType;
 @end

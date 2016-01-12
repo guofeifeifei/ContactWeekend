@@ -9,7 +9,9 @@
 #import "HotActivityViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "HotTableViewCell.h"
-#import <MBProgressHUD.h>
+
+#import "hotModel.h"
+#import "ThemeViewController.h"
 #import "PullingRefreshTableView.h"
 
 @interface HotActivityViewController ()<UITableViewDataSource, UITableViewDelegate, PullingRefreshTableViewDelegate>
@@ -64,6 +66,12 @@
 
 #pragma mark ------------UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ThemeViewController *themeVC = [[ThemeViewController alloc] init];
+    hotModel *model = self.hotArray[indexPath.row];
+    themeVC.themeid = model.hotId;
+    self.tabBarController.tabBar.hidden = YES;
+    [self.navigationController pushViewController:themeVC animated:YES];
+    
     
 }
 #pragma mark ------------- PUlltableViewDelegate
@@ -71,9 +79,9 @@
 //向上滑动
 - (void)pullingTableViewDidStartLoading:(PullingRefreshTableView *)tableView{
     
-    self.refreshing = YES;
+    self.refreshing = NO;
     [self performSelector:@selector(loadData) withObject:nil afterDelay:1.0];
-    _pageCount = 1;
+    _pageCount += 1;
     
 }
 
@@ -83,7 +91,7 @@
     
     self.refreshing = YES;
     [self performSelector:@selector(loadData) withObject:nil afterDelay:1.0];
-    _pageCount += 1;
+    _pageCount = 1;
     
 }
 //刷新完成时间
@@ -108,15 +116,21 @@
 - (void)loadData{
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"加载数据";
-    [sessionManager GET:[NSString stringWithFormat:@"%@&page=%ld", KHotActivity, _pageCount] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+       [sessionManager GET:[NSString stringWithFormat:@"%@&page=%ld", KHotActivity, _pageCount] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         GFFLog(@"%@", downloadProgress);
-        [hud removeFromSuperview];
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = responseObject;
         NSInteger code = [dic[@"code"] integerValue];
         NSString *status = dic[@"status"];
+        
+        //如果向上拉删除数组
+        if (self.refreshing) {
+            if (self.hotArray.count > 0) {
+                [self.hotArray removeAllObjects];
+            }
+        }
+        
+        
         if ([status isEqualToString:@"success"] && code == 0) {
             NSDictionary *dict = dic[@"success"];
             NSArray *rcData = dict[@"rcData"];
@@ -126,13 +140,14 @@
                 [self.hotArray addObject:model];
             }
             [self.tableView reloadData];
+        }else{
+            
         }
        // GFFLog(@"%@", self.hotArray);
-        [hud removeFromSuperview];
-        
+                
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         GFFLog(@"%@", error);
-        [hud removeFromSuperview];
+        
     }];
     
     

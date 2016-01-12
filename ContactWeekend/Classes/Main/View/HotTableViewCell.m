@@ -11,6 +11,7 @@
 @interface HotTableViewCell()
 
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
+@property (weak, nonatomic) IBOutlet UILabel *count;
 
 @end
 @implementation HotTableViewCell
@@ -30,7 +31,6 @@
     
     [self.headImageView sd_setImageWithURL:[NSURL URLWithString:hotModel.img] placeholderImage:nil];
     
-    
-    
+    self.count.text = hotModel.counts;
 }
 @end

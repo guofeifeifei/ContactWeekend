@@ -16,6 +16,15 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7BL-xi-jhB">
                         <rect key="frame" x="8" y="8" width="359" height="183"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btn_list_praise_pre" translatesAutoresizingMaskIntoConstraints="NO" id="ab4-1J-TA7">
+                        <rect key="frame" x="295" y="150" width="20" height="20"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mi-nW-F7t">
                         <rect key="frame" x="321" y="148" width="27" height="31"/>
@@ -23,12 +32,10 @@
                         <color key="textColor" red="1" green="0.96718819010000001" blue="0.9321982338" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btn_list_praise_pre" translatesAutoresizingMaskIntoConstraints="NO" id="ab4-1J-TA7">
-                        <rect key="frame" x="295" y="150" width="20" height="20"/>
-                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="count" destination="5Mi-nW-F7t" id="d2N-ho-f4c"/>
                 <outlet property="headImageView" destination="7BL-xi-jhB" id="air-1b-SGz"/>
             </connections>
             <point key="canvasLocation" x="962.5" y="425"/>

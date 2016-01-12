@@ -9,7 +9,9 @@
 #import "jingActivityViewController.h"
 #import "PullingRefreshTableView.h"
 #import "JingXuanTableViewCell.h"
-#import <MBProgressHUD.h>
+
+#import "jingModel.h"
+#import "ActivityViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 @interface jingActivityViewController ()<UITableViewDataSource, UITableViewDelegate, PullingRefreshTableViewDelegate>
 {
@@ -61,6 +63,17 @@
 
 #pragma mark ---------UItableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    jingModel *jingModel = self.jingArray[indexPath.row];
+    UIStoryboard *mainStroyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ActivityViewController *activityVC = [mainStroyboard instantiateViewControllerWithIdentifier:@"ActivityDetilVC"];
+    activityVC.hidesBottomBarWhenPushed = YES;
+    activityVC.activityId = jingModel.activityId;
+    [self.navigationController pushViewController:activityVC animated:YES];
+    
+    
+    
+    
+
     
 }
 #pragma mark ----------PullingRefreshDelegate
@@ -75,6 +88,7 @@
 
 //上拉刷新
 - (void)pullingTableViewDidStartLoading:(PullingRefreshTableView *)tableView{
+        self.refreshing = NO;
     [self performSelector:@selector(loadData) withObject:nil afterDelay:1.0];
     _pageCount +=1;
 }
@@ -82,16 +96,22 @@
 - (void)loadData{
        AFHTTPSessionManager *sessionManger = [AFHTTPSessionManager manager];
     sessionManger.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"加载数据";
+   
     [sessionManger GET:[NSString stringWithFormat:@"%@&page=%ld", KGoodActivity, _pageCount] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        [hud removeFromSuperview];
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+           } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = responseObject;
         
         NSInteger code = [dic[@"code"] integerValue];
         
         NSString *status = dic[@"status"];
+        //下拉刷新的时候，需要移除数组的数据
+        if (self.refreshing) {
+            
+        
+        if (self.jingArray.count > 0) {
+            [self.jingArray removeAllObjects];
+        }
+        }
         
         if ([status isEqualToString:@"success"] && code == 0) {
             NSDictionary *dict = dic[@"success"];
@@ -102,16 +122,18 @@
                 jingModel *model = [[jingModel alloc] initWithDictionary:acdataDic];
                  [self.jingArray addObject:model];
                // GFFLog(@"========%lu", self.jingArray.count);
+                
+        
+                
+                
             }
              [self.tableView reloadData];
         }
         
        
-        [hud removeFromSuperview];
-        
+               
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [hud removeFromSuperview];
-    }];
+           }];
     
     GFFLog(@"12312");
     //完成加载
