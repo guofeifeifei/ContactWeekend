@@ -11,6 +11,7 @@
 #import "DiscoverViewController.h"
 #import "MineViewController.h"
 
+
 @interface AppDelegate ()
 
 @end
@@ -21,6 +22,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    [WeiboSDK enableDebugMode:YES];
+    [WeiboSDK registerApp:kAppKey];
+    
+    [WXApi registerApp:kWeixinAppID];
+    
     
     //UItabBar
    self.tabBarVC = [[UITabBarController alloc] init];
@@ -73,16 +79,26 @@
     self.tabBarVC.viewControllers = @[mainNav, discoverNav, mineNav];
     self.window.rootViewController = self.tabBarVC;
     
-    
-    
-    
-    
-    
-    
-    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+#pragma mark ------- shareWeibo
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+    return [WeiboSDK handleOpenURL:url delegate:self];
+    return  [WXApi handleOpenURL:url delegate:self];
+    
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    
+    BOOL isSuc = [WXApi handleOpenURL:url delegate:self];
+    NSLog(@"url %@ isSuc %d",url,isSuc == YES ? 1 : 0);
+    return  isSuc;
+    
+    return [WeiboSDK handleOpenURL:url delegate:self];
+    
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

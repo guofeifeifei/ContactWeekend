@@ -39,7 +39,7 @@
     self.title.text = jingModel.title;
     self.ageLable.text = jingModel.age;
     self.priceLable.text = jingModel.price;
-    [self.loveButton setTitle:[NSString stringWithFormat:@"%ld", [jingModel.counts integerValue]] forState:UIControlStateNormal];
+    [self.loveButton setTitle:[NSString stringWithFormat:@"%lu", [jingModel.counts integerValue]] forState:UIControlStateNormal];
     self.addressLable.text = jingModel.address;
     
     

@@ -17,6 +17,8 @@
 @interface DiscoverViewController ()<UITableViewDataSource, UITableViewDelegate, PullingRefreshTableViewDelegate>
 @property(nonatomic, strong) PullingRefreshTableView *tableView;
 @property(nonatomic, strong) NSMutableArray *likeArray;
+
+@property(nonatomic, assign) BOOL refreshing;
 @end
 
 @implementation DiscoverViewController
@@ -27,12 +29,14 @@
     [self.view addSubview:self.tableView];
     [self.tableView registerNib:[UINib nibWithNibName:@"DiscoverTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     [self.tableView launchRefreshing];
+     self.navigationController.navigationBar.barTintColor = MainColor;
+    [self getRequestData];
    
 }
 - (PullingRefreshTableView *)tableView{
     if (_tableView == nil) {
         self.tableView = [[PullingRefreshTableView alloc] initWithFrame:CGRectMake(0, 0, kWidth, kHeight - 64) pullingDelegate:self];
-        self.tableView.backgroundColor = [UIColor brownColor];
+      
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
         //旋转90度
@@ -41,7 +45,7 @@
         
         //只有上边的下拉刷新
         [self.tableView setHeaderOnly:YES];
-        self.tableView.rowHeight = 120;
+        self.tableView.rowHeight = 80;
        //self.edgesForExtendedLayout = UIRectEdgeNone;
     }
     return _tableView;
@@ -111,6 +115,10 @@
                 DiscoverModel *model = [[DiscoverModel alloc] initWithDictionary:likeDic];
                 [self.likeArray addObject:model];
             }
+            
+            [self.tableView tableViewDidFinishedLoading];
+            self.tableView.reachedTheEnd = NO;
+            
             [self.tableView reloadData];
             GFFLog(@"%@", self.likeArray);
         }
@@ -120,7 +128,8 @@
         GFFLog(@"%@", error);
     }];
     
-    
+  
+
 }
 - (NSMutableArray *)likeArray{
     if (_likeArray == nil) {

@@ -19,7 +19,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    self.frame = CGRectMake(0, 0, kWidth, 120);
+    self.frame = CGRectMake(0, 0, kWidth, 80);
 }
 - (void)setModel:(DiscoverModel *)model{
     [self.LikeImageView sd_setImageWithURL:[NSURL URLWithString:model.image] placeholderImage:nil];

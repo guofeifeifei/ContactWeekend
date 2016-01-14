@@ -214,7 +214,7 @@
         }else{
             
         }//完成加载
-        [self.tableView tableViewDidFinishedLoading];
+       [self.tableView tableViewDidFinishedLoading];
         self.tableView.reachedTheEnd = NO;
         [self.tableView reloadData];
                [self showPreviousSelectButton];
@@ -257,7 +257,7 @@
             GFFLog(@"self.tourisArray = %@", self.tourisArray);
             }
         //完成加载
-        [self.tableView tableViewDidFinishedLoading];
+       [self.tableView tableViewDidFinishedLoading];
         self.tableView.reachedTheEnd = NO;
         [self.tableView reloadData];
         [self showPreviousSelectButton];
@@ -302,7 +302,7 @@
             
         }
         //完成加载
-        [self.tableView tableViewDidFinishedLoading];
+      [self.tableView tableViewDidFinishedLoading];
         self.tableView.reachedTheEnd = NO;
         [self.tableView reloadData];
                   [self showPreviousSelectButton];
@@ -345,9 +345,9 @@
             
         }
         //完成加载
-        [self.tableView tableViewDidFinishedLoading];
+       [self.tableView tableViewDidFinishedLoading];
         self.tableView.reachedTheEnd = NO;
-        [self.tableView reloadData];
+       [self.tableView reloadData];
         [self showPreviousSelectButton];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -358,12 +358,12 @@
 
 }
 - (void)showPreviousSelectButton{
-    if (self.refreshing) {//下拉刷新删除数组
-        if (self.showDataArray.count > 0) {
-            [self.showDataArray removeAllObjects];
-        }
-    }
-       
+//    if (self.refreshing == NO) {//下拉刷新删除数组
+//        if (self.showDataArray.count > 0) {
+//            [self.showDataArray removeAllObjects];
+//        }
+//    }
+    
     switch (self.classifyListType) {
             
         case ClassifyListTypeShowRepertoire:

@@ -182,7 +182,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ZxE-tI-DPL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.066666666666666666" green="0.76862745098039209" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="GujaratiSangamMN" family="Gujarati Sangam MN" pointSize="22"/>
                             <color key="textColor" red="0.98913946630000005" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

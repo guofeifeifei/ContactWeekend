@@ -14,16 +14,43 @@
                         <viewControllerLayoutGuide type="bottom" id="zBU-Nc-338"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="En1-9V-xSQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.47701006260000001" blue="0.73396791299999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="我" id="VI5-ci-76K"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L24-RH-y8Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1379.5" y="494.5"/>
+            <point key="canvasLocation" x="1127.5" y="442.5"/>
+        </scene>
+        <!--Share View Controller-->
+        <scene sceneID="fiG-CO-YIW">
+            <objects>
+                <viewController storyboardIdentifier="ShareView" id="9qc-hZ-LXf" customClass="ShareViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ynb-We-W8G"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Yz-pz-oOI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JUw-SM-rRx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1bX-nc-JuY">
+                                <rect key="frame" x="20" y="68" width="341" height="214"/>
+                                <color key="backgroundColor" red="0.066666666669999999" green="0.76862745099999996" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EHc-Or-R8A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1545.5" y="420.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zRy-KU-z4c">
@@ -31,7 +58,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e0Z-pR-mDJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ps3-hL-gRr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Ps3-hL-gRr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -42,7 +69,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEW-oa-k2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919.5" y="494.5"/>
+            <point key="canvasLocation" x="677.5" y="442.5"/>
         </scene>
     </scenes>
 </document>

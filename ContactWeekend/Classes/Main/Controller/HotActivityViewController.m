@@ -116,7 +116,7 @@
 - (void)loadData{
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-       [sessionManager GET:[NSString stringWithFormat:@"%@&page=%ld", KHotActivity, _pageCount] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+       [sessionManager GET:[NSString stringWithFormat:@"%@&page=%ld", KHotActivity, (long)_pageCount] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         GFFLog(@"%@", downloadProgress);
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = responseObject;

@@ -50,7 +50,7 @@
     //self.automaticallyAdjustsScrollViewInsets = NO;
     // Do any additional setup after loading the view.
     
-    
+     self.navigationController.navigationBar.barTintColor = MainColor;
     
     //self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:96.0/255.0f green:185.0/255.0f blue:191.0/255.0f alpha:1.0];
     
@@ -68,7 +68,7 @@
     //注册一下cell
     [self.tableView registerNib:[UINib nibWithNibName:@"MainTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
  
- //  [self requestModel];
+ //[self requestModel];
    // [self configtableData];
      [self configTableViewHeaderView];
     
