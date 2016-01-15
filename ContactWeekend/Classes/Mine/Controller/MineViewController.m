@@ -10,8 +10,8 @@
 #import <SDWebImage/SDImageCache.h>
 #import <MessageUI/MessageUI.h>
 #import "ProgressHUD.h"
-
 #import "ShareView.h"
+#import "LoginViewController.h"
 @interface MineViewController ()<UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate, UIAlertViewDelegate>
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) UIButton *headImageButton;
@@ -228,6 +228,12 @@
     [ProgressHUD showSuccess:@"当前已是最新版本"];
 }
 - (void)login{
+    UIStoryboard *loginStoryboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+    UINavigationController *nav = [loginStoryboard instantiateViewControllerWithIdentifier:@"LoginNav"];
+    
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
+    
+    
     
     
 }

@@ -53,6 +53,7 @@ typedef NS_ENUM(NSInteger, ClassifyListType) {
 #define kWeixinAppID @"wx29b93928456c25ed"
 #define kWeixinAppSecret @"3e576c3c9e3ab80829a01c7a3d196cc2"
 #define kWeixinRedirectURL
-
+//bmob
+#define kBmobAppKey @"37f321f4f553004c24cf7f0c5ea4c40c"
 
 #endif /* Contactdefine_h */

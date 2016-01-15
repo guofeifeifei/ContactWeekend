@@ -11,7 +11,7 @@
 #import "DiscoverViewController.h"
 #import "MineViewController.h"
 
-
+#import <BmobSDK/Bmob.h>
 @interface AppDelegate ()
 
 @end
@@ -26,6 +26,7 @@
     [WeiboSDK registerApp:kAppKey];
     
     [WXApi registerApp:kWeixinAppID];
+    [Bmob registerWithAppKey:kBmobAppKey];
     
     
     //UItabBar

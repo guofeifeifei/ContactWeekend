@@ -10,17 +10,13 @@
 #import "WeiboSDK.h"
 #import "AppDelegate.h"
 #import "WXApi.h"
-@interface ShareView()<WeiboSDKDelegate, WBHttpRequestDelegate, WXApiDelegate,UIScrollViewDelegate>
-{
-    WBSDKRelationshipButton *relationshipButton;
-    WBSDKCommentButton *commentButton;
-}
+@interface ShareView()<WeiboSDKDelegate, WXApiDelegate,UIScrollViewDelegate>
+
 @property(nonatomic, strong) UIView *blackView;
 @property(nonatomic, strong) UIView *shareView;
-
-
-
 @end
+
+
 @implementation ShareView
 - (instancetype)init{
     self = [super init];
@@ -247,22 +243,6 @@
     
     
 }
-- (void)appRecommendButton1Pressed
-{
-    AppDelegate *myDelegate =(AppDelegate*)[[UIApplication sharedApplication] delegate];
-    
-    NSArray* uids = nil;//[[NSArray alloc]initWithObjects:@"1111",@"2222",@"3333",nil];
-    
-    WBSDKAppRecommendRequest *request = [WBSDKAppRecommendRequest requestWithUIDs:uids access_token:myDelegate.wbtoken];
-    request.userInfo = @{@"ShareMessageFrom": @"SendMessageToWeiboViewController",
-                         @"Other_Info_1": [NSNumber numberWithInt:123],
-                         @"Other_Info_2": @[@"obj1", @"obj2"],
-                         @"Other_Info_3": @{@"key1": @"obj1", @"key2": @"obj2"}};
-    [WeiboSDK sendRequest:request];
-}
-
-
-
 
 
 
