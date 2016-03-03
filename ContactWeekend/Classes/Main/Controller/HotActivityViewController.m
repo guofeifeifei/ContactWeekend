@@ -29,7 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"热门专题";
-    [self showBackButton];
+    [self showBackButtonWithImage:@"back"];
     
 
     

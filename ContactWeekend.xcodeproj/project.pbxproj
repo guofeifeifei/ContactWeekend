@@ -40,10 +40,15 @@
 		7A5A28C01C4650F900894291 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5A28BF1C4650F900894291 /* libsqlite3.tbd */; };
 		7A77E33D1C3D1BBB000C9CCA /* Fileactivity\ in Resources */ = {isa = PBXBuildFile; fileRef = 7A77E33C1C3D1BBB000C9CCA /* Fileactivity\ */; };
 		7A77E3401C3D2024000C9CCA /* UIViewController+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A77E33F1C3D2024000C9CCA /* UIViewController+Common.m */; };
+		7A8631F71C8709E1001C572F /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8631F61C8709E1001C572F /* RegisterViewController.m */; };
+		7A8C180B1C85B14B000B3095 /* SelectCityCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C180A1C85B14B000B3095 /* SelectCityCollectionViewCell.m */; };
+		7A8E5BD91C858A070079DB1A /* HeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8E5BD81C858A070079DB1A /* HeaderCollectionReusableView.m */; };
+		7A8E5BDB1C85943C0079DB1A /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A8E5BDA1C85943C0079DB1A /* HeaderCollectionReusableView.xib */; };
 		7A8F258F1C44FA9400F027B8 /* DiscoverTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F258D1C44FA9400F027B8 /* DiscoverTableViewCell.m */; };
 		7A8F25901C44FA9400F027B8 /* DiscoverTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A8F258E1C44FA9400F027B8 /* DiscoverTableViewCell.xib */; };
 		7A8F25DE1C450ECA00F027B8 /* discover.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A8F25DD1C450ECA00F027B8 /* discover.plist */; };
 		7A8F25E11C45127100F027B8 /* DiscoverModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F25E01C45127100F027B8 /* DiscoverModel.m */; };
+		7A926B351C85292300CE4DF4 /* SelectCity in Resources */ = {isa = PBXBuildFile; fileRef = 7A926B341C85292300CE4DF4 /* SelectCity */; };
 		7A9683581C3A4E3E00C191D8 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9683491C3A4E3E00C191D8 /* DiscoverViewController.m */; };
 		7A9683591C3A4E3E00C191D8 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A96834F1C3A4E3E00C191D8 /* MainViewController.m */; };
 		7A96835A1C3A4E3E00C191D8 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9683551C3A4E3E00C191D8 /* MineViewController.m */; };
@@ -152,12 +157,20 @@
 		7A77E33C1C3D1BBB000C9CCA /* Fileactivity\ */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Fileactivity\\"; sourceTree = "<group>"; };
 		7A77E33E1C3D2024000C9CCA /* UIViewController+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Common.h"; path = "../Classes/Main/Controller/UIViewController+Common.h"; sourceTree = "<group>"; };
 		7A77E33F1C3D2024000C9CCA /* UIViewController+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Common.m"; path = "../Classes/Main/Controller/UIViewController+Common.m"; sourceTree = "<group>"; };
+		7A8631F51C8709E1001C572F /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		7A8631F61C8709E1001C572F /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		7A8C18091C85B14A000B3095 /* SelectCityCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCityCollectionViewCell.h; sourceTree = "<group>"; };
+		7A8C180A1C85B14B000B3095 /* SelectCityCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCityCollectionViewCell.m; sourceTree = "<group>"; };
+		7A8E5BD71C858A070079DB1A /* HeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderCollectionReusableView.h; sourceTree = "<group>"; };
+		7A8E5BD81C858A070079DB1A /* HeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderCollectionReusableView.m; sourceTree = "<group>"; };
+		7A8E5BDA1C85943C0079DB1A /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		7A8F258C1C44FA9400F027B8 /* DiscoverTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverTableViewCell.h; sourceTree = "<group>"; };
 		7A8F258D1C44FA9400F027B8 /* DiscoverTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverTableViewCell.m; sourceTree = "<group>"; };
 		7A8F258E1C44FA9400F027B8 /* DiscoverTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoverTableViewCell.xib; sourceTree = "<group>"; };
 		7A8F25DD1C450ECA00F027B8 /* discover.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = discover.plist; sourceTree = "<group>"; };
 		7A8F25DF1C45127100F027B8 /* DiscoverModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverModel.h; sourceTree = "<group>"; };
 		7A8F25E01C45127100F027B8 /* DiscoverModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverModel.m; sourceTree = "<group>"; };
+		7A926B341C85292300CE4DF4 /* SelectCity */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SelectCity; sourceTree = "<group>"; };
 		7A9683481C3A4E3E00C191D8 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
 		7A9683491C3A4E3E00C191D8 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
 		7A96834E1C3A4E3E00C191D8 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -237,6 +250,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA4A0681C48E996009ABF9D /* CoreLocation.framework in Frameworks */,
 				7AA4A0741C48EA75009ABF9D /* MediaPlayer.framework in Frameworks */,
 				7AA4A0721C48EA68009ABF9D /* AVFoundation.framework in Frameworks */,
 				7AA4A0701C48EA41009ABF9D /* libicucore.tbd in Frameworks */,
@@ -244,7 +258,6 @@
 				7AA4A06C1C48EA03009ABF9D /* CFNetwork.framework in Frameworks */,
 				7AA4A06A1C48E9F4009ABF9D /* MobileCoreServices.framework in Frameworks */,
 				7A5A28B21C46508F00894291 /* Security.framework in Frameworks */,
-				7AA4A0681C48E996009ABF9D /* CoreLocation.framework in Frameworks */,
 				7A5890431C47A19D0081F851 /* libc++.tbd in Frameworks */,
 				7AA4A0661C48E96B009ABF9D /* BmobSDK.framework in Frameworks */,
 				7A4564D31C48AEB300D0FACF /* libWeChatSDK.a in Frameworks */,
@@ -482,6 +495,7 @@
 				7A96834F1C3A4E3E00C191D8 /* MainViewController.m */,
 				7ACDBFBF1C3CBC47007B7CB8 /* SelectCityViewController.h */,
 				7ACDBFC01C3CBC47007B7CB8 /* SelectCityViewController.m */,
+				7A926B341C85292300CE4DF4 /* SelectCity */,
 				7ACDBFC21C3CBDC8007B7CB8 /* searchViewController.h */,
 				7ACDBFC31C3CBDC8007B7CB8 /* searchViewController.m */,
 				7ACDBFC51C3CBE8B007B7CB8 /* ActivityViewController.h */,
@@ -508,6 +522,11 @@
 		7A9683511C3A4E3E00C191D8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7A8C180A1C85B14B000B3095 /* SelectCityCollectionViewCell.m */,
+				7A8C18091C85B14A000B3095 /* SelectCityCollectionViewCell.h */,
+				7A8E5BD71C858A070079DB1A /* HeaderCollectionReusableView.h */,
+				7A8E5BDA1C85943C0079DB1A /* HeaderCollectionReusableView.xib */,
+				7A8E5BD81C858A070079DB1A /* HeaderCollectionReusableView.m */,
 				7AE781FE1C420A3800F9ECB9 /* JingXuanTableViewCell.h */,
 				7AE781FF1C420A3900F9ECB9 /* JingXuanTableViewCell.m */,
 				7AE782001C420A3900F9ECB9 /* JingXuanTableViewCell.xib */,
@@ -584,6 +603,8 @@
 			children = (
 				7AA4A07B1C48ED3A009ABF9D /* LoginViewController.h */,
 				7AA4A07C1C48ED3A009ABF9D /* LoginViewController.m */,
+				7A8631F51C8709E1001C572F /* RegisterViewController.h */,
+				7A8631F61C8709E1001C572F /* RegisterViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -706,6 +727,7 @@
 			files = (
 				7AA4C44C1C43A87C00EDFB08 /* typeid22.plist in Resources */,
 				7AE782091C422B0200F9ECB9 /* list.plist in Resources */,
+				7A8E5BDB1C85943C0079DB1A /* HeaderCollectionReusableView.xib in Resources */,
 				7A8F25901C44FA9400F027B8 /* DiscoverTableViewCell.xib in Resources */,
 				7A3A80D61C3F5D40004F6BA9 /* Theme.plist in Resources */,
 				7ACC8CBC1C41268F00EEE30A /* hott.plist in Resources */,
@@ -725,6 +747,7 @@
 				7A076FC41C3A1C5500D10A90 /* Assets.xcassets in Resources */,
 				7AA4C44B1C43A87C00EDFB08 /* typeid6.plist in Resources */,
 				7AA4C44E1C43A87C00EDFB08 /* typeud21.plist in Resources */,
+				7A926B351C85292300CE4DF4 /* SelectCity in Resources */,
 				7A77E33D1C3D1BBB000C9CCA /* Fileactivity\ in Resources */,
 				7A076FC71C3A1C5500D10A90 /* LaunchScreen.storyboard in Resources */,
 				7A4564D41C48AEB300D0FACF /* read_me.txt in Resources */,
@@ -789,6 +812,7 @@
 			files = (
 				7AC4C30E1C3E5B0800ED3E1E /* UIView+Extension.m in Sources */,
 				7AA4C4441C4391AC00EDFB08 /* VOIndicatorAnimation.m in Sources */,
+				7A8631F71C8709E1001C572F /* RegisterViewController.m in Sources */,
 				7ACC8CC71C4131A100EEE30A /* hotModel.m in Sources */,
 				7AA4C4431C4391AC00EDFB08 /* VOContentLayer.m in Sources */,
 				7A54022C1C3F999800F232F6 /* ActivityThemeView.m in Sources */,
@@ -800,8 +824,10 @@
 				7A9683581C3A4E3E00C191D8 /* DiscoverViewController.m in Sources */,
 				7A96835A1C3A4E3E00C191D8 /* MineViewController.m in Sources */,
 				7A076FBF1C3A1C5500D10A90 /* main.m in Sources */,
+				7A8C180B1C85B14B000B3095 /* SelectCityCollectionViewCell.m in Sources */,
 				7AE3EBB41C474DED00CC8677 /* ShareViewController.m in Sources */,
 				7ACDBFCD1C3CBFF8007B7CB8 /* ClassListViewController.m in Sources */,
+				7A8E5BD91C858A070079DB1A /* HeaderCollectionReusableView.m in Sources */,
 				7A8F25E11C45127100F027B8 /* DiscoverModel.m in Sources */,
 				7AA4C4461C4391AC00EDFB08 /* VOSegmentedControl.m in Sources */,
 				7ACDBFC11C3CBC47007B7CB8 /* SelectCityViewController.m in Sources */,

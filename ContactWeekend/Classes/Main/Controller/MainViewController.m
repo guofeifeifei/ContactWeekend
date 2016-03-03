@@ -20,8 +20,10 @@
 #import "jingActivityViewController.h"
 #import "HotActivityViewController.h"
 
-@interface MainViewController ()<UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
-
+@interface MainViewController ()<UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, changeCityDelegate>
+{
+    NSString *cityNameId;
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *listArray;//全部类表数据
@@ -37,6 +39,8 @@
 @property(nonatomic, strong) UIButton *jingxuanbtn;
 
 @property(nonatomic, strong) UIButton *remenBtn;
+@property(nonatomic, strong) UIButton *leftBtn;
+
 
 
 
@@ -49,27 +53,38 @@
     [super viewDidLoad];
     //self.automaticallyAdjustsScrollViewInsets = NO;
     // Do any additional setup after loading the view.
-    
+    cityNameId = @"1";
      self.navigationController.navigationBar.barTintColor = MainColor;
     
     //self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:96.0/255.0f green:185.0/255.0f blue:191.0/255.0f alpha:1.0];
     
-
+    
+    self.leftBtn = [UIButton buttonWithType:UIButtonTypeCustom ];
+    self.leftBtn.frame = CGRectMake(0, 0, 60, 44);
+    [self.leftBtn setTitle:@"北京" forState:UIControlStateNormal];
+    [self.leftBtn setImage:[UIImage imageNamed:@"btn_chengshi"] forState:UIControlStateNormal];
+    //调整butto图片的位置
+    [self.leftBtn setImageEdgeInsets:UIEdgeInsetsMake(0, self.leftBtn.frame.size.width - 25, 0, 0)];
+    //调整Button标题所在的位置，距离btn顶部、左边、下边、右边的距离，
+    [self.leftBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, -30, 0, 10)];
+    [self.leftBtn addTarget:self action:@selector(selectcCityAction:) forControlEvents:UIControlEventTouchUpInside];
+   UIBarButtonItem *leftBarBtn = [[UIBarButtonItem alloc] initWithCustomView:self.leftBtn];
+    
     //left
-    UIBarButtonItem *leftBarBtn = [[UIBarButtonItem alloc] initWithTitle:@"北京" style:UIBarButtonItemStylePlain target:self action:@selector(selectcCityAction:)];
+//    UIBarButtonItem *leftBarBtn = [[UIBarButtonItem alloc] initWithTitle:@"北京" style:UIBarButtonItemStylePlain target:self action:@selector(selectcCityAction:)];
     leftBarBtn.tintColor = [UIColor whiteColor];
     self.navigationItem.leftBarButtonItem = leftBarBtn;
     
-    //right
-    UIBarButtonItem *rightBarBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchActivity:)];
-    rightBarBtn.tintColor = [UIColor whiteColor];
-    self.navigationItem.rightBarButtonItem = rightBarBtn;
-    
+//    //right
+//    UIBarButtonItem *rightBarBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchActivity:)];
+//    rightBarBtn.tintColor = [UIColor whiteColor];
+//    self.navigationItem.rightBarButtonItem = rightBarBtn;
+//    
     //注册一下cell
     [self.tableView registerNib:[UINib nibWithNibName:@"MainTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
  
- [self requestModel];
-   // [self configtableData];
+      [self requestModel];
+    //[self configtableData];
      [self configTableViewHeaderView];
     
  }
@@ -91,7 +106,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MainTableViewCell *mainCell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     NSMutableArray *array = self.listArray[indexPath.section];
-    mainCell.mainModel = array[indexPath.row];
+    
+    //防止数组越界
+    if (indexPath.row < array.count) {
+         mainCell.mainModel = array[indexPath.row];
+    }
+   
+    
     return mainCell;
     
     
@@ -102,7 +123,7 @@
     return self.listArray.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 203;
+    return 209;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -115,11 +136,11 @@
    
     if (section == 0) {
         
-        sectionView.image = [UIImage imageNamed:@"home_recommd_rc"];
+        sectionView.image = [UIImage imageNamed:@"home_recommed_ac"];
         
 
     }else{
-        sectionView.image = [UIImage imageNamed:@"home_recommed_ac"];
+        sectionView.image = [UIImage imageNamed:@"home_recommd_rc"];
     }
     
     [view addSubview:sectionView];
@@ -158,13 +179,28 @@
 //选择城市
 - (void)selectcCityAction:(UIBarButtonItem *)barbtn{
     SelectCityViewController *selectCityVC = [[SelectCityViewController alloc] init];
-    [self.navigationController presentViewController:selectCityVC animated:YES completion:nil];
-    
+    selectCityVC.delegate = self;
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:selectCityVC];
+       
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
 }
-- (void)searchActivity:(UIBarButtonItem *)barbtn{
-    searchViewController *searchVC = [[searchViewController alloc] init];
-    [self.navigationController pushViewController:searchVC animated:YES];
+- (void)getChangeCityName:(NSString *)cityName cityId:(NSString *)cityId{
+    cityNameId = cityId;
+    [self.leftBtn setTitle:cityName forState:UIControlStateNormal];
+    //如果城市名大于两个字需要调整位置
+    NSInteger edge = - 20;
+    if (cityName.length >2) {
+        edge = - 10;
+        
+        
+    }
+    [self.leftBtn setImageEdgeInsets:UIEdgeInsetsMake(0, self.leftBtn.frame.size.width - 20, 0, 0)];
+    [self requestModel];
 }
+//- (void)searchActivity:(UIBarButtonItem *)barbtn{
+//    searchViewController *searchVC = [[searchViewController alloc] init];
+//    [self.navigationController pushViewController:searchVC animated:YES];
+//}
 #pragma mark --------- configTableViewHeaderView
 - (void)configTableViewHeaderView{
     UIView *tableVievHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kWidth, 343)];
@@ -189,7 +225,7 @@
     //添加按钮
     for (int i = 0; i < 4; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake(i * kWidth/ 4, 186, kWidth / 4, kWidth / 4);
+        btn.frame = CGRectMake(i * kWidth/ 4, 0, kWidth / 4, kWidth / 4);
         NSString *imagestr = [NSString stringWithFormat:@"home_icon_%02d", i + 1];
         [btn setImage:[UIImage imageNamed:imagestr] forState:UIControlStateNormal];
         
@@ -215,7 +251,7 @@
     //添加轮播图
     
     if (_carouselView == nil) {
-    self.carouselView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 186)];
+    self.carouselView = [[UIScrollView alloc] initWithFrame:CGRectMake(10, 85, [UIScreen mainScreen].bounds.size.width - 20, 186)];
         
     self.carouselView.delegate = self;
     //整屏滑动
@@ -231,7 +267,7 @@
 - (UIPageControl *)pageControl{
     if (_pageControl == nil) {
         //创建一个pageControl
-        self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0 , 150, kWidth, 30)];
+        self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(200 , 240, kWidth - 200, 30)];
         [self.pageControl  addTarget:self action:@selector(pageControlAction:) forControlEvents:UIControlEventTouchUpInside];
         self.pageControl.currentPageIndicatorTintColor = [UIColor cyanColor];
     }
@@ -338,7 +374,9 @@
 //    NSString *str = [NSString stringWithFormat:kMainDataList];
     AFHTTPSessionManager *sessionManger = [AFHTTPSessionManager manager];
     sessionManger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
-    [sessionManger GET:kMainDataList parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    NSNumber *lat = [[NSUserDefaults standardUserDefaults] valueForKey:@"lat"];
+    NSNumber *lng = [[NSUserDefaults standardUserDefaults] valueForKey:@"lng"];
+    [sessionManger GET:[NSString stringWithFormat:@"%@&cityid=%@&lat=%@&lng=%@", kMainDataList, cityNameId,lat, lng] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         GFFLog(@"downloadProgress = %lld",downloadProgress.totalUnitCount);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *resultdic = responseObject;
@@ -347,6 +385,12 @@
         if ([status isEqualToString:@"success"] && code == 0) {
             NSDictionary *dic = resultdic[@"success"];
             NSArray *acDataArray = dic[@"acData"];//推荐活动
+            if (self.activityArray.count > 0) {
+                [self.activityArray removeAllObjects];
+            }
+            if (self.listArray.count > 0) {
+                [self.listArray removeAllObjects];
+            }
             for (NSDictionary *dict in acDataArray) {
                 MainModel *model = [[MainModel alloc] initWithDiction:dict];
                 [self.activityArray addObject:model];
@@ -354,7 +398,9 @@
             [self.listArray addObject:self.activityArray];
            
             NSArray *rcDataArray = dic[@"rcData"];//推荐专题
-            
+            if (self.themeArray.count > 0) {
+                [self.themeArray removeAllObjects];
+            }
             for (NSDictionary *dict in rcDataArray) {
                 MainModel *model = [[MainModel alloc] initWithDiction:dict];
                 [self.themeArray addObject:model];
@@ -364,6 +410,9 @@
             //已请求回来的城市作为导航栏按钮标题
             self.navigationItem.leftBarButtonItem.title = cityName;
             [self.tableView reloadData];
+            if (self.adArray.count > 0) {
+                [self.adArray removeAllObjects];
+            }
             NSArray *adDataArray = dic[@"adData"];//广告
             for (NSDictionary *dic in adDataArray) {
                 

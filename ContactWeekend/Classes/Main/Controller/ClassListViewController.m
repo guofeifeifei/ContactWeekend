@@ -41,7 +41,7 @@
     // Do any additional setup after loading the view.
     _pageCount = 1;
     self.title = @"分类列表";
-    [self showBackButton];
+    [self showBackButtonWithImage:@"back"];
     self.tabBarController.tabBar.hidden = YES;
     [self.view addSubview:self.segmentControl];
     

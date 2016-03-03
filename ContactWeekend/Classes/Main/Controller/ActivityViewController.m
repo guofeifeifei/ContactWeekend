@@ -35,7 +35,7 @@
     self.activityDetailView.phoneButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.activityDetailView.phoneButton addTarget:self action:@selector(phoneButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     
-   [self showBackButton];
+  [self showBackButtonWithImage:@"back"];
    [self getModel];
     
 }

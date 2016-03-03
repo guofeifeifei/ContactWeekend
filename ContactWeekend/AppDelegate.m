@@ -10,10 +10,18 @@
 #import "MainViewController.h"
 #import "DiscoverViewController.h"
 #import "MineViewController.h"
-
+//1.引入所需框架
+#import <CoreLocation/CoreLocation.h>
 #import <BmobSDK/Bmob.h>
-@interface AppDelegate ()
+//5.遵循定位代理协议
+@interface AppDelegate ()<CLLocationManagerDelegate>
+{
+ //2.定义定位所需要类的实例对象
+    CLLocationManager *_locationManager;//定位
+    //创建地理编码对象
+    CLGeocoder *_geocoder;
 
+}
 @end
 
 @implementation AppDelegate
@@ -27,6 +35,34 @@
     
     [WXApi registerApp:kWeixinAppID];
     [Bmob registerWithAppKey:kBmobAppKey];
+    
+    
+    
+    //3.初始化定位对象
+    _locationManager = [[CLLocationManager alloc] init];
+    //初始化地理编码对象
+    _geocoder = [[CLGeocoder alloc] init];
+    
+    //
+    if (![CLLocationManager locationServicesEnabled]) {
+        GFFLog(@"用户位置不可用");
+    }
+    //4.如果没有授权，请求用户授权
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+        [_locationManager requestWhenInUseAuthorization];
+    } else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse){
+        //设置代理
+        _locationManager.delegate = self;
+        //设置定位精度,精度越高越耗电
+        _locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+        //定位频率，每隔多少米定位一次
+        CLLocationDistance distance = 100.0;
+        _locationManager.distanceFilter = distance;
+        //启动定位服务
+        [_locationManager startUpdatingLocation];
+        
+    }
+    
     
     
     //UItabBar
@@ -101,6 +137,45 @@
     
     
 }
+
+#pragma mark ------------------ CLLocationMangerDelegate
+/*
+ 定位协议代理方法
+ manger 当前使用的定位对象
+ location 返回当前的定位数据，是一个数组对象，数组里边元素是CLLocation类型
+ 
+ */
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    GFFLog(@"%@", locations);
+    //从数组中取出一个定位信息
+    
+    CLLocation *location = [locations lastObject];
+    //从CLLocation中获取坐标
+ //CLLocationCoordinate2D坐标系，里边包含经度和纬度
+    CLLocationCoordinate2D coordinate = location.coordinate;
+    GFFLog(@"纬度：%f 经度：%f 海拔：%f 航向：%f 行走速度：%f", coordinate.latitude, coordinate.longitude, location.altitude, location.course, location.speed);
+    NSUserDefaults *userDefault =[NSUserDefaults standardUserDefaults];
+    [userDefault setValue:[NSNumber numberWithDouble:coordinate.latitude] forKey:@"lat"];
+    [userDefault setValue:[NSNumber numberWithDouble:coordinate.longitude] forKey:@"lng"];
+
+    [_geocoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        CLPlacemark *placeMark = [placemarks firstObject];
+        [[NSUserDefaults standardUserDefaults] setValue:placeMark.addressDictionary[@"City"] forKey:@"city"];
+      //保存
+        [userDefault synchronize];
+        
+        
+    }];
+    
+    GFFLog(@"%@ %@", _locationManager, manager);
+    //如果不需要使用定位服务的时候及时关闭定位服务
+    [manager stopUpdatingLocation];
+    
+}
+
+
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

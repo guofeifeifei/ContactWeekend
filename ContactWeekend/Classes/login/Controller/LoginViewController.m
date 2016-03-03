@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import <BmobSDK/Bmob.h>
-@interface LoginViewController ()
+@interface LoginViewController ()<UITextFieldDelegate>
 
 @end
 
@@ -19,7 +19,7 @@
     // Do any additional setup after loading the view.
     self.navigationController.navigationBar.barTintColor = MainColor;
     
-    [self showBackButton];
+    [self showBackButtonWithImage:@"back"];
     
     
 }
@@ -27,6 +27,30 @@
 - (void)backButtonAction:(UIButton *)btn{
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (IBAction)loginAction:(id)sender {
+    [BmobUser loginWithUsernameInBackground:self.userNameText.text password:self.passwordText.text block:^(BmobUser *user, NSError *error) {
+        if (user) {
+            GFFLog(@"%@", user);
+            GFFLog(@"登陆成功");
+        }
+        
+    }];
+    
+    GFFLog(@"没有登录成功");
+}
+//点击右下角回收键盘
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+//点击页面空白处回收键盘
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+    
+}
+
+
 //增加
 - (IBAction)addOneData:(id)sender {
     //往GameScore表添加一条playerName为小明，分数为78的数据
@@ -37,8 +61,7 @@
     [user setObject:@"18852044421" forKey:@"user_cellPhone"];
     [user saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
         //进行操作
-        
-        GFFLog(@"恭喜注册成功");
+                GFFLog(@"恭喜注册成功");
     }];
     
     
@@ -68,6 +91,7 @@
     
     
 }
+//更新数据
 - (IBAction)delegateData:(id)sender {
     
     BmobQuery *bquery = [BmobQuery queryWithClassName:@"MemberUser"];

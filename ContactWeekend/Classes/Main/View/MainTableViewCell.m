@@ -7,9 +7,9 @@
 //
 
 #import "MainTableViewCell.h"
-
+#import <CoreLocation/CoreLocation.h>
 #import <SDWebImage/UIImageView+WebCache.h>
-@interface MainTableViewCell()
+@interface MainTableViewCell()<CLLocationManagerDelegate>
 
 //活动图片
 @property (weak, nonatomic) IBOutlet UIImageView *activityImageView;
@@ -28,7 +28,18 @@
     [self.activityImageView sd_setImageWithURL:[NSURL URLWithString:mainModel.image_big] placeholderImage:nil];//网上获取图片
     self.activityNameLable.text = mainModel.title;
     self.activityPriceLable.text = mainModel.price;
-    [self.activityDistanceBtn setTitle:mainModel.address forState:UIControlStateNormal];
+    
+    //计算两个地点的距离
+    double origLat = [[[NSUserDefaults standardUserDefaults] valueForKey:@"lat"] doubleValue];
+    double orgLng = [[[NSUserDefaults standardUserDefaults] valueForKey:@"lng"] doubleValue];
+    CLLocation *origLoc = [[CLLocation alloc] initWithLatitude:origLat longitude:orgLng];
+    CLLocation *disLoc = [[CLLocation alloc] initWithLatitude:mainModel.lat longitude:mainModel.lng];
+    //计算两个地点的距离
+    double distance = [origLoc distanceFromLocation:disLoc] / 1000;
+    [self.activityDistanceBtn setTitle:[NSString stringWithFormat:@"%.2f",distance] forState:UIControlStateNormal];
+    
+    
+    
     if ([mainModel.type intValue] == RecommendTypeActivity) {
         self.activityDistanceBtn.hidden = NO;
     }else{
